@@ -10,55 +10,55 @@ Post-Deployment Script Template
 --------------------------------------------------------------------------------------
 */
 -- Insert the whole 32 NFL teams into the Teams table if they don't already exist
-INSERT INTO Teams (TeamName, [Location], Conference, Division)
+INSERT INTO Teams (TeamAbbreviations, TeamName, [Location], Conference, Division)
 SELECT * FROM (VALUES 
     -- NFC East
-    ('Dallas Cowboys', 'Dallas', 'NFC', 'East'),
-    ('New York Giants', 'New York', 'NFC', 'East'),
-    ('Philadelphia Eagles', 'Philadelphia', 'NFC', 'East'),
-    ('Washington Commanders', 'Washington D.C.', 'NFC', 'East'),
+    ('DAL', 'Dallas Cowboys', 'Dallas', 'NFC', 'East'),
+    ('NYG', 'New York Giants', 'New York', 'NFC', 'East'),
+    ('PHI', 'Philadelphia Eagles', 'Philadelphia', 'NFC', 'East'),
+    ('WAS', 'Washington Commanders', 'Washington D.C.', 'NFC', 'East'),
 
     -- NFC North
-    ('Chicago Bears', 'Chicago', 'NFC', 'North'),
-    ('Detroit Lions', 'Detroit', 'NFC', 'North'),
-    ('Green Bay Packers', 'Green Bay', 'NFC', 'North'),
-    ('Minnesota Vikings', 'Minneapolis', 'NFC', 'North'),
+    ('CHI', 'Chicago Bears', 'Chicago', 'NFC', 'North'),
+    ('DET', 'Detroit Lions', 'Detroit', 'NFC', 'North'),
+    ('GNB',  'Green Bay Packers', 'Green Bay', 'NFC', 'North'),
+    ('MIN', 'Minnesota Vikings', 'Minneapolis', 'NFC', 'North'),
 
     -- NFC South
-    ('Atlanta Falcons', 'Atlanta', 'NFC', 'South'),
-    ('Carolina Panthers', 'Charlotte', 'NFC', 'South'),
-    ('New Orleans Saints', 'New Orleans', 'NFC', 'South'),
-    ('Tampa Bay Buccaneers', 'Tampa', 'NFC', 'South'),
+    ('ATL', 'Atlanta Falcons', 'Atlanta', 'NFC', 'South'),
+    ('CAR', 'Carolina Panthers', 'Charlotte', 'NFC', 'South'),
+    ('NOR',  'New Orleans Saints', 'New Orleans', 'NFC', 'South'),
+    ('TAM',  'Tampa Bay Buccaneers', 'Tampa', 'NFC', 'South'),
 
     -- NFC West
-    ('Arizona Cardinals', 'Phoenix', 'NFC', 'West'),
-    ('Los Angeles Rams', 'Los Angeles', 'NFC', 'West'),
-    ('San Francisco 49ers', 'San Francisco', 'NFC', 'West'),
-    ('Seattle Seahawks', 'Seattle', 'NFC', 'West'),
+    ('ARI', 'Arizona Cardinals', 'Phoenix', 'NFC', 'West'),
+    ('LAR', 'Los Angeles Rams', 'Los Angeles', 'NFC', 'West'),
+    ('SFO',  'San Francisco 49ers', 'San Francisco', 'NFC', 'West'),
+    ('SEA', 'Seattle Seahawks', 'Seattle', 'NFC', 'West'),
 
     -- AFC East
-    ('Buffalo Bills', 'Buffalo', 'AFC', 'East'),
-    ('Miami Dolphins', 'Miami', 'AFC', 'East'),
-    ('New England Patriots', 'New England', 'AFC', 'East'),
-    ('New York Jets', 'New York', 'AFC', 'East'),
+    ('BUF', 'Buffalo Bills', 'Buffalo', 'AFC', 'East'),
+    ('MIA', 'Miami Dolphins', 'Miami', 'AFC', 'East'),
+    ('NE',  'New England Patriots', 'New England', 'AFC', 'East'),
+    ('NYJ', 'New York Jets', 'New York', 'AFC', 'East'),
 
     -- AFC North
-    ('Baltimore Ravens', 'Baltimore', 'AFC', 'North'),
-    ('Cincinnati Bengals', 'Cincinnati', 'AFC', 'North'),
-    ('Cleveland Browns', 'Cleveland', 'AFC', 'North'),
-    ('Pittsburgh Steelers', 'Pittsburgh', 'AFC', 'North'),
+    ('BAL', 'Baltimore Ravens', 'Baltimore', 'AFC', 'North'),
+    ('CIN', 'Cincinnati Bengals', 'Cincinnati', 'AFC', 'North'),
+    ('CLE', 'Cleveland Browns', 'Cleveland', 'AFC', 'North'),
+    ('PIT', 'Pittsburgh Steelers', 'Pittsburgh', 'AFC', 'North'),
 
     -- AFC South
-    ('Houston Texans', 'Houston', 'AFC', 'South'),
-    ('Indianapolis Colts', 'Indianapolis', 'AFC', 'South'),
-    ('Jacksonville Jaguars', 'Jacksonville', 'AFC', 'South'),
-    ('Tennessee Titans', 'Nashville', 'AFC', 'South'),
+    ('HOU', 'Houston Texans', 'Houston', 'AFC', 'South'),
+    ('IND', 'Indianapolis Colts', 'Indianapolis', 'AFC', 'South'),
+    ('JAX', 'Jacksonville Jaguars', 'Jacksonville', 'AFC', 'South'),
+    ('TEN', 'Tennessee Titans', 'Nashville', 'AFC', 'South'),
 
     -- AFC West
-    ('Denver Broncos', 'Denver', 'AFC', 'West'),
-    ('Kansas City Chiefs', 'Kansas City', 'AFC', 'West'),
-    ('Las Vegas Raiders', 'Las Vegas', 'AFC', 'West'),
-    ('Los Angeles Chargers', 'Los Angeles', 'AFC', 'West')) AS TeamsToInsert(TeamName, Location, Conference, Division)
+    ('DEN', 'Denver Broncos', 'Denver', 'AFC', 'West'),
+    ('KAN',  'Kansas City Chiefs', 'Kansas City', 'AFC', 'West'),
+    ('LVR',  'Las Vegas Raiders', 'Las Vegas', 'AFC', 'West'),
+    ('LAC', 'Los Angeles Chargers', 'Los Angeles', 'AFC', 'West')) AS TeamsToInsert(TeamAbbreviations, TeamName, Location, Conference, Division)
 WHERE NOT EXISTS (
     SELECT 1 
     FROM Teams t 

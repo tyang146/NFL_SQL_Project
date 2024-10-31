@@ -1,0 +1,1317 @@
+﻿<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="10/31/2024 3:36:26 PM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="LAPTOP-7195F50U"
+  DTS:CreatorName="LAPTOP-7195F50U\Kia"
+  DTS:DTSID="{36402985-B22A-4A27-ACDA-6309145923F1}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="16.0.5685.0"
+  DTS:LocaleID="1033"
+  DTS:ObjectName="AddQBPlayers"
+  DTS:PackageType="5"
+  DTS:VersionBuild="17"
+  DTS:VersionGUID="{9F050426-9CF9-4763-BCDF-D2285386ED83}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[(localdb)\ProjectModels.NFL-SQL-Project]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{584EB55C-C416-4B8A-9A30-C96078BAC35A}"
+      DTS:ObjectName="(localdb)\ProjectModels.NFL-SQL-Project">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="Data Source=(localdb)\ProjectModels;Initial Catalog=NFL-SQL-Project;Provider=MSOLEDBSQL.1;Integrated Security=SSPI;Auto Translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[Flat File Connection Manager]"
+      DTS:CreationName="FLATFILE"
+      DTS:Description="nfl passing stats"
+      DTS:DTSID="{290C2CD5-0B1F-4DDA-85C1-7D90AE861818}"
+      DTS:ObjectName="Flat File Connection Manager">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:Format="Delimited"
+          DTS:LocaleID="1033"
+          DTS:HeaderRowDelimiter="_x000D__x000A_"
+          DTS:ColumnNamesInFirstDataRow="True"
+          DTS:RowDelimiter=""
+          DTS:TextQualifier="_x003C_none_x003E_"
+          DTS:CodePage="1252"
+          DTS:ConnectionString="C:\Users\Kia\Desktop\NFL-SQL-Project\CSV\2024_nfl_passing_stats(Worksheet).csv">
+          <DTS:FlatFileColumns>
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Rk"
+              DTS:DTSID="{2461BA34-B978-4360-8D53-CF29B641630E}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Player"
+              DTS:DTSID="{7BF2C304-5306-4D61-8062-43B0411DEE25}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="3"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Age"
+              DTS:DTSID="{7619410E-0103-4E3D-B78C-44EA3DF63E27}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Team"
+              DTS:DTSID="{B1BB9BB9-5DB5-48EC-A80D-12B35E338F69}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Pos"
+              DTS:DTSID="{37302FB5-F471-46A7-9E65-6FEFFDD44BF3}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="G"
+              DTS:DTSID="{7D0E222E-3930-4305-A5A8-A6927C281F66}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="GS"
+              DTS:DTSID="{F47562DF-1FC8-468B-B5B4-764B603A37DB}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="QBrec"
+              DTS:DTSID="{7706AA2A-A90B-470A-9C1A-1C20E04F37F1}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Cmp"
+              DTS:DTSID="{B212CC71-11DE-484F-9E38-8D02AD9E3017}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Att"
+              DTS:DTSID="{AA27EAAA-C754-474C-9CE4-78278C38B19C}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Cmp%"
+              DTS:DTSID="{1F639BC0-35F2-44E1-8FD3-4F31AC91CF4D}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Yds"
+              DTS:DTSID="{86369BC4-3A5E-4BAC-B892-0308727970C1}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="TD"
+              DTS:DTSID="{BCB4289C-B883-4470-AB5C-E56A96CDE5A6}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="TD%"
+              DTS:DTSID="{94C9F238-6EDF-4F52-855F-F8098241735C}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Int"
+              DTS:DTSID="{485C142F-2BDF-491E-AA9E-67C6F40FB861}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Int%"
+              DTS:DTSID="{2085ED22-1F07-40E1-9A45-63AE54DA84EF}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="1D"
+              DTS:DTSID="{193232FB-75A3-430C-8025-93956E16A09D}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Succ%"
+              DTS:DTSID="{CEBA30AB-A31E-4BDB-B9F5-8B08089348D9}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Lng"
+              DTS:DTSID="{09B1084F-DD73-4DF4-BE58-89211635D4C6}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Y A"
+              DTS:DTSID="{1EF5D0B4-D9DD-48F5-B43B-2E66594EA7E5}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="AY A"
+              DTS:DTSID="{6229820B-A81E-4DD6-8298-0D632F3B3A8E}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Y C"
+              DTS:DTSID="{06D00C33-402E-4425-80DC-F27F1E3BBC78}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Y G"
+              DTS:DTSID="{334867F3-BB1A-46FE-A47A-C50237A6C1DC}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Rate"
+              DTS:DTSID="{CA98E603-C6BE-4FD6-B043-EAB0DDE969EE}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="QBR"
+              DTS:DTSID="{70046CFB-5F8E-4381-9A14-A1C15B378DCE}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Sk"
+              DTS:DTSID="{85764CFB-8A9A-4689-AA6B-271430E2389A}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Sk%"
+              DTS:DTSID="{B1BE22D3-E229-43B0-91F5-5FD7FA6200C4}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="NY A"
+              DTS:DTSID="{5C88D123-6BE3-487D-8471-E24008F44076}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="ANY A"
+              DTS:DTSID="{7A0E465A-D916-41CA-A3EF-010B8224DF88}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="4QC"
+              DTS:DTSID="{99359D51-3F6A-4CF2-9905-230CC03ADE48}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="GWD"
+              DTS:DTSID="{0E5C13F9-45A7-4F5B-A1A0-A8B954B6F9CB}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x000D__x000A_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Awards"
+              DTS:DTSID="{A608DA17-DBBA-455F-B22A-E843D1B56C4D}"
+              DTS:CreationName="" />
+          </DTS:FlatFileColumns>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:Variables />
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\Data Flow Task"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Data Flow Task"
+      DTS:DTSID="{50612C31-2DFE-4AF5-B054-927A70DC120D}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Data Flow Task"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\Data Flow Task\Lookup TeamID"
+              componentClassID="Microsoft.Lookup"
+              contactInfo="Lookup;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;6"
+              description="Joins additional columns to the data flow by looking up values in a table. For example, join to the 'employee id' column the employees table to get 'hire date' and 'employee name'. We recommend this transformation when the lookup table can fit into memory."
+              name="Lookup TeamID"
+              usesDispositions="true"
+              version="6">
+              <properties>
+                <property
+                  dataType="System.String"
+                  description="Specifies the SQL statement that generates the lookup table."
+                  expressionType="Notify"
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from [dbo].[Teams]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies a SQL statement that uses parameters to generate the lookup table."
+                  expressionType="Notify"
+                  name="SqlCommandParam"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from (select * from [dbo].[Teams]) [refTable]
+where [refTable].[TeamAbbreviations] = ?</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the type of connection used to access the reference dataset."
+                  name="ConnectionType"
+                  typeConverter="LookupConnectionType">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the cache type of the lookup table."
+                  name="CacheType"
+                  typeConverter="CacheType">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies how the Lookup transformation handles rows without matching entries in the reference data set."
+                  name="NoMatchBehavior"
+                  typeConverter="LookupNoMatchBehavior">1</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the percentage of the cache that is allocated for rows with no matching entries in the reference dataset."
+                  name="NoMatchCachePercentage">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Maximum Memory Usage for Reference Cache on a 32 bit platform."
+                  name="MaxMemoryUsage">25</property>
+                <property
+                  dataType="System.Int64"
+                  description="Maximum Memory Usage for Reference Cache on a 64 bit platform."
+                  name="MaxMemoryUsage64">25</property>
+                <property
+                  dataType="System.String"
+                  description="Indicates whether to reference metadata in an XML format."
+                  name="ReferenceMetadataXml">&lt;referenceMetadata&gt;&lt;referenceColumns&gt;&lt;referenceColumn name="TeamID" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="TeamAbbreviations" dataType="DT_WSTR" length="3" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="TeamName" dataType="DT_WSTR" length="50" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="Location" dataType="DT_WSTR" length="50" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="Conference" dataType="DT_WSTR" length="10" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="Division" dataType="DT_WSTR" length="10" precision="0" scale="0" codePage="0"/&gt;&lt;/referenceColumns&gt;&lt;/referenceMetadata&gt;</property>
+                <property
+                  containsID="true"
+                  dataType="System.String"
+                  description="Specifies the list of lineage identifiers that map to the parameters that the SQL statement in the SQLCommand property uses. Entries in the list are separated by semicolons."
+                  name="ParameterMap">#{Package\Data Flow Task\nfl qb players.Outputs[Flat File Source Output].Columns[Team]};</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Determines whether duplicate keys in the reference data should be treated as errors when full cache mode is used."
+                  name="TreatDuplicateKeysAsError">false</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Data Flow Task\Lookup TeamID.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[(localdb)\ProjectModels.NFL-SQL-Project]"
+                  connectionManagerRefId="Package.ConnectionManagers[(localdb)\ProjectModels.NFL-SQL-Project]"
+                  description="Connection manager used to access lookup data."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Data Flow Task\Lookup TeamID.Inputs[Lookup Input]"
+                  name="Lookup Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Data Flow Task\Lookup TeamID.Inputs[Lookup Input].Columns[Team]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="Team"
+                      lineageId="Package\Data Flow Task\nfl qb players.Outputs[Flat File Source Output].Columns[Team]">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Specifies the column in the reference table that a column joins."
+                          name="JoinToReferenceColumn">TeamAbbreviations</property>
+                        <property
+                          dataType="System.Null"
+                          description="Specifies the column in the reference table from which a column is copied."
+                          name="CopyFromReferenceColumn" />
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Data Flow Task\Lookup TeamID.Outputs[Lookup Match Output]"
+                  errorOrTruncationOperation="Lookup"
+                  exclusionGroup="1"
+                  name="Lookup Match Output"
+                  synchronousInputId="Package\Data Flow Task\Lookup TeamID.Inputs[Lookup Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow Task\Lookup TeamID.Outputs[Lookup Match Output].Columns[TeamID]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Copy Column"
+                      lineageId="Package\Data Flow Task\Lookup TeamID.Outputs[Lookup Match Output].Columns[TeamID]"
+                      name="TeamID"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Specifies the column in the reference table from which a column is copied."
+                          name="CopyFromReferenceColumn">TeamID</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Data Flow Task\Lookup TeamID.Outputs[Lookup No Match Output]"
+                  description="The Lookup output that handles rows with no matching entries in the reference dataset. Use this output when the NoMatchBehavior property is set to &quot;Send rows with no matching entries to the no match output.&quot;"
+                  exclusionGroup="1"
+                  name="Lookup No Match Output"
+                  synchronousInputId="Package\Data Flow Task\Lookup TeamID.Inputs[Lookup Input]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Data Flow Task\Lookup TeamID.Outputs[Lookup Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Lookup Error Output"
+                  synchronousInputId="Package\Data Flow Task\Lookup TeamID.Inputs[Lookup Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow Task\Lookup TeamID.Outputs[Lookup Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task\Lookup TeamID.Outputs[Lookup Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\Lookup TeamID.Outputs[Lookup Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task\Lookup TeamID.Outputs[Lookup Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Data Flow Task\NFL DW"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+              description="OLE DB Destination"
+              name="NFL DW"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[dbo].[Players]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">3</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                  name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Data Flow Task\NFL DW.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[(localdb)\ProjectModels.NFL-SQL-Project]"
+                  connectionManagerRefId="Package.ConnectionManagers[(localdb)\ProjectModels.NFL-SQL-Project]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Data Flow Task\NFL DW.Inputs[OLE DB Destination Input]"
+                  errorOrTruncationOperation="Insert"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Data Flow Task\NFL DW.Inputs[OLE DB Destination Input].Columns[TeamID]"
+                      cachedDataType="i4"
+                      cachedName="TeamID"
+                      externalMetadataColumnId="Package\Data Flow Task\NFL DW.Inputs[OLE DB Destination Input].ExternalColumns[TeamID]"
+                      lineageId="Package\Data Flow Task\Lookup TeamID.Outputs[Lookup Match Output].Columns[TeamID]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\NFL DW.Inputs[OLE DB Destination Input].Columns[FirstName]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="FirstName"
+                      externalMetadataColumnId="Package\Data Flow Task\NFL DW.Inputs[OLE DB Destination Input].ExternalColumns[FirstName]"
+                      lineageId="Package\Data Flow Task\Split full name into first and last name.Outputs[Derived Column Output].Columns[FirstName]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\NFL DW.Inputs[OLE DB Destination Input].Columns[LastName]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="LastName"
+                      externalMetadataColumnId="Package\Data Flow Task\NFL DW.Inputs[OLE DB Destination Input].ExternalColumns[LastName]"
+                      lineageId="Package\Data Flow Task\Split full name into first and last name.Outputs[Derived Column Output].Columns[LastName]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\NFL DW.Inputs[OLE DB Destination Input].Columns[Pos]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="Pos"
+                      externalMetadataColumnId="Package\Data Flow Task\NFL DW.Inputs[OLE DB Destination Input].ExternalColumns[Position]"
+                      lineageId="Package\Data Flow Task\nfl qb players.Outputs[Flat File Source Output].Columns[Pos]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\NFL DW.Inputs[OLE DB Destination Input].ExternalColumns[PlayerID]"
+                      dataType="i4"
+                      name="PlayerID" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\NFL DW.Inputs[OLE DB Destination Input].ExternalColumns[FirstName]"
+                      dataType="wstr"
+                      length="50"
+                      name="FirstName" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\NFL DW.Inputs[OLE DB Destination Input].ExternalColumns[LastName]"
+                      dataType="wstr"
+                      length="50"
+                      name="LastName" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\NFL DW.Inputs[OLE DB Destination Input].ExternalColumns[Position]"
+                      dataType="wstr"
+                      length="50"
+                      name="Position" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\NFL DW.Inputs[OLE DB Destination Input].ExternalColumns[Birthdate]"
+                      dataType="dbDate"
+                      name="Birthdate" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\NFL DW.Inputs[OLE DB Destination Input].ExternalColumns[TeamID]"
+                      dataType="i4"
+                      name="TeamID" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Data Flow Task\NFL DW.Outputs[OLE DB Destination Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Destination Error Output"
+                  synchronousInputId="Package\Data Flow Task\NFL DW.Inputs[OLE DB Destination Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow Task\NFL DW.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task\NFL DW.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\NFL DW.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task\NFL DW.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Data Flow Task\nfl qb players"
+              componentClassID="Microsoft.FlatFileSource"
+              contactInfo="Flat File Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+              description="Flat File Source"
+              localeId="1033"
+              name="nfl qb players"
+              usesDispositions="true"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.Boolean"
+                  description="Specifies whether zero-length columns are treated as null."
+                  name="RetainNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of an output column containing the file name. If no name is specified, no output column containing the file name will be generated."
+                  name="FileNameColumnName"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Data Flow Task\nfl qb players.Connections[FlatFileConnection]"
+                  connectionManagerID="Package.ConnectionManagers[Flat File Connection Manager]"
+                  connectionManagerRefId="Package.ConnectionManagers[Flat File Connection Manager]"
+                  name="FlatFileConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Data Flow Task\nfl qb players.Outputs[Flat File Source Output]"
+                  name="Flat File Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow Task\nfl qb players.Outputs[Flat File Source Output].Columns[Player]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\nfl qb players.Outputs[Flat File Source Output].ExternalColumns[Player]"
+                      length="50"
+                      lineageId="Package\Data Flow Task\nfl qb players.Outputs[Flat File Source Output].Columns[Player]"
+                      name="Player"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task\nfl qb players.Outputs[Flat File Source Output].Columns[Age]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\nfl qb players.Outputs[Flat File Source Output].ExternalColumns[Age]"
+                      lineageId="Package\Data Flow Task\nfl qb players.Outputs[Flat File Source Output].Columns[Age]"
+                      name="Age"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task\nfl qb players.Outputs[Flat File Source Output].Columns[Team]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\nfl qb players.Outputs[Flat File Source Output].ExternalColumns[Team]"
+                      length="50"
+                      lineageId="Package\Data Flow Task\nfl qb players.Outputs[Flat File Source Output].Columns[Team]"
+                      name="Team"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task\nfl qb players.Outputs[Flat File Source Output].Columns[Pos]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\nfl qb players.Outputs[Flat File Source Output].ExternalColumns[Pos]"
+                      length="50"
+                      lineageId="Package\Data Flow Task\nfl qb players.Outputs[Flat File Source Output].Columns[Pos]"
+                      name="Pos"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\nfl qb players.Outputs[Flat File Source Output].ExternalColumns[Rk]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Rk" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\nfl qb players.Outputs[Flat File Source Output].ExternalColumns[Player]"
+                      dataType="wstr"
+                      length="50"
+                      name="Player" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\nfl qb players.Outputs[Flat File Source Output].ExternalColumns[Age]"
+                      dataType="i4"
+                      name="Age" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\nfl qb players.Outputs[Flat File Source Output].ExternalColumns[Team]"
+                      dataType="wstr"
+                      length="50"
+                      name="Team" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\nfl qb players.Outputs[Flat File Source Output].ExternalColumns[Pos]"
+                      dataType="wstr"
+                      length="50"
+                      name="Pos" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\nfl qb players.Outputs[Flat File Source Output].ExternalColumns[G]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="G" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\nfl qb players.Outputs[Flat File Source Output].ExternalColumns[GS]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="GS" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\nfl qb players.Outputs[Flat File Source Output].ExternalColumns[QBrec]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="QBrec" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\nfl qb players.Outputs[Flat File Source Output].ExternalColumns[Cmp]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Cmp" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\nfl qb players.Outputs[Flat File Source Output].ExternalColumns[Att]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Att" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\nfl qb players.Outputs[Flat File Source Output].ExternalColumns[Cmp%]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Cmp%" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\nfl qb players.Outputs[Flat File Source Output].ExternalColumns[Yds]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Yds" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\nfl qb players.Outputs[Flat File Source Output].ExternalColumns[TD]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="TD" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\nfl qb players.Outputs[Flat File Source Output].ExternalColumns[TD%]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="TD%" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\nfl qb players.Outputs[Flat File Source Output].ExternalColumns[Int]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Int" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\nfl qb players.Outputs[Flat File Source Output].ExternalColumns[Int%]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Int%" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\nfl qb players.Outputs[Flat File Source Output].ExternalColumns[1D]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="1D" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\nfl qb players.Outputs[Flat File Source Output].ExternalColumns[Succ%]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Succ%" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\nfl qb players.Outputs[Flat File Source Output].ExternalColumns[Lng]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Lng" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\nfl qb players.Outputs[Flat File Source Output].ExternalColumns[Y A]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Y A" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\nfl qb players.Outputs[Flat File Source Output].ExternalColumns[AY A]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="AY A" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\nfl qb players.Outputs[Flat File Source Output].ExternalColumns[Y C]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Y C" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\nfl qb players.Outputs[Flat File Source Output].ExternalColumns[Y G]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Y G" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\nfl qb players.Outputs[Flat File Source Output].ExternalColumns[Rate]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Rate" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\nfl qb players.Outputs[Flat File Source Output].ExternalColumns[QBR]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="QBR" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\nfl qb players.Outputs[Flat File Source Output].ExternalColumns[Sk]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Sk" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\nfl qb players.Outputs[Flat File Source Output].ExternalColumns[Sk%]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Sk%" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\nfl qb players.Outputs[Flat File Source Output].ExternalColumns[NY A]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="NY A" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\nfl qb players.Outputs[Flat File Source Output].ExternalColumns[ANY A]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="ANY A" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\nfl qb players.Outputs[Flat File Source Output].ExternalColumns[4QC]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="4QC" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\nfl qb players.Outputs[Flat File Source Output].ExternalColumns[GWD]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="GWD" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\nfl qb players.Outputs[Flat File Source Output].ExternalColumns[Awards]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Awards" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Data Flow Task\nfl qb players.Outputs[Flat File Source Error Output]"
+                  isErrorOut="true"
+                  name="Flat File Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow Task\nfl qb players.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
+                      codePage="1252"
+                      dataType="text"
+                      description="Flat File Source Error Output Column"
+                      lineageId="Package\Data Flow Task\nfl qb players.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
+                      name="Flat File Source Error Output Column" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\nfl qb players.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task\nfl qb players.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\nfl qb players.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task\nfl qb players.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Data Flow Task\Split full name into first and last name"
+              componentClassID="Microsoft.DerivedColumn"
+              contactInfo="Derived Column;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Creates new column values by applying expressions to transformation input columns. Create new columns or overwrite existing ones. For example, concatenate the values from the 'first name' and 'last name' column to make a 'full name' column."
+              name="Split full name into first and last name"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\Data Flow Task\Split full name into first and last name.Inputs[Derived Column Input]"
+                  description="Input to the Derived Column Transformation"
+                  name="Derived Column Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Data Flow Task\Split full name into first and last name.Inputs[Derived Column Input].Columns[Player]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="Player"
+                      lineageId="Package\Data Flow Task\nfl qb players.Outputs[Flat File Source Output].Columns[Player]" />
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Data Flow Task\Split full name into first and last name.Outputs[Derived Column Output]"
+                  description="Default Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  name="Derived Column Output"
+                  synchronousInputId="Package\Data Flow Task\Split full name into first and last name.Inputs[Derived Column Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow Task\Split full name into first and last name.Outputs[Derived Column Output].Columns[FirstName]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      length="50"
+                      lineageId="Package\Data Flow Task\Split full name into first and last name.Outputs[Derived Column Output].Columns[FirstName]"
+                      name="FirstName"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">[SUBSTRING](#{Package\Data Flow Task\nfl qb players.Outputs[Flat File Source Output].Columns[Player]},1,[FINDSTRING](#{Package\Data Flow Task\nfl qb players.Outputs[Flat File Source Output].Columns[Player]}," ",1) - 1)</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">SUBSTRING(Player,1,FINDSTRING(Player," ",1) - 1)</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task\Split full name into first and last name.Outputs[Derived Column Output].Columns[LastName]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      length="50"
+                      lineageId="Package\Data Flow Task\Split full name into first and last name.Outputs[Derived Column Output].Columns[LastName]"
+                      name="LastName"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">[SUBSTRING](#{Package\Data Flow Task\nfl qb players.Outputs[Flat File Source Output].Columns[Player]},[FINDSTRING](#{Package\Data Flow Task\nfl qb players.Outputs[Flat File Source Output].Columns[Player]}," ",1) + 1,[LEN](#{Package\Data Flow Task\nfl qb players.Outputs[Flat File Source Output].Columns[Player]}))</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">SUBSTRING(Player,FINDSTRING(Player," ",1) + 1,LEN(Player))</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Data Flow Task\Split full name into first and last name.Outputs[Derived Column Error Output]"
+                  description="Error Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Derived Column Error Output"
+                  synchronousInputId="Package\Data Flow Task\Split full name into first and last name.Inputs[Derived Column Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow Task\Split full name into first and last name.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task\Split full name into first and last name.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\Split full name into first and last name.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task\Split full name into first and last name.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\Data Flow Task.Paths[Derived Column Output]"
+              endId="Package\Data Flow Task\NFL DW.Inputs[OLE DB Destination Input]"
+              name="Derived Column Output"
+              startId="Package\Data Flow Task\Split full name into first and last name.Outputs[Derived Column Output]" />
+            <path
+              refId="Package\Data Flow Task.Paths[Flat File Source Output]"
+              endId="Package\Data Flow Task\Lookup TeamID.Inputs[Lookup Input]"
+              name="Flat File Source Output"
+              startId="Package\Data Flow Task\nfl qb players.Outputs[Flat File Source Output]" />
+            <path
+              refId="Package\Data Flow Task.Paths[Lookup Match Output]"
+              endId="Package\Data Flow Task\Split full name into first and last name.Inputs[Derived Column Input]"
+              name="Lookup Match Output"
+              startId="Package\Data Flow Task\Lookup TeamID.Outputs[Lookup Match Output]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="8">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
+        <NodeLayout
+          Size="150.4,41.6"
+          Id="Package\Data Flow Task"
+          TopLeft="414.999977325401,82.3333327607976" />
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <TaskHost
+    design-time-name="Package\Data Flow Task">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        <NodeLayout
+          Size="118.4,41.6"
+          Id="Package\Data Flow Task\NFL DW"
+          TopLeft="709.999961207312,173.333332127995" />
+        <NodeLayout
+          Size="140,41.6"
+          Id="Package\Data Flow Task\nfl qb players"
+          TopLeft="432.499976369243,67.5999995299181" />
+        <NodeLayout
+          Size="250.4,41.6"
+          Id="Package\Data Flow Task\Split full name into first and last name"
+          TopLeft="634.999965305131,73.6666661543979" />
+        <NodeLayout
+          Size="152,41.6"
+          Id="Package\Data Flow Task\Lookup TeamID"
+          TopLeft="469.166641032531,173.333332127995" />
+        <EdgeLayout
+          Id="Package\Data Flow Task.Paths[Lookup Match Output]"
+          TopLeft="569.166641032531,173.333332127995">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="150.6333242726,-58.0666659735971"
+              Start="0,0"
+              End="150.6333242726,-50.5666659735971">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,-25.1803462821498" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,-25.1803462821498"
+                    Point2="0,-29.1803462821498"
+                    Point3="4,-29.1803462821498" />
+                  <mssgle:LineSegment
+                    End="146.6333242726,-29.1803462821498" />
+                  <mssgle:CubicBezierSegment
+                    Point1="146.6333242726,-29.1803462821498"
+                    Point2="150.6333242726,-29.1803462821498"
+                    Point3="150.6333242726,-33.1803462821498" />
+                  <mssgle:LineSegment
+                    End="150.6333242726,-50.5666659735971" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="27.1252754175501,-24.1803462821498,96.3827734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Data Flow Task.Paths[Flat File Source Output]"
+          TopLeft="502.499976369243,109.199999529918">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="18.6666646632881,64.1333325980769"
+              Start="0,0"
+              End="18.6666646632881,56.6333325980769">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,34.0791662301082" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,34.0791662301082"
+                    Point2="0,38.0791662301082"
+                    Point3="4,38.0791662301082" />
+                  <mssgle:LineSegment
+                    End="14.6666646632881,38.0791662301082" />
+                  <mssgle:CubicBezierSegment
+                    Point1="14.6666646632881,38.0791662301082"
+                    Point2="18.6666646632881,38.0791662301082"
+                    Point3="18.6666646632881,42.0791662301082" />
+                  <mssgle:LineSegment
+                    End="18.6666646632881,56.6333325980769" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Data Flow Task.Paths[Derived Column Output]"
+          TopLeft="800.599965305131,115.266666154398">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-31.4000040978192,58.0666659735971"
+              Start="0,0"
+              End="-31.4000040978192,50.5666659735971">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,19.4478727360049" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,19.4478727360049"
+                    Point2="0,23.4478727360049"
+                    Point3="-4,23.4478727360049" />
+                  <mssgle:LineSegment
+                    End="-27.4000040978192,23.4478727360049" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-27.4000040978192,23.4478727360049"
+                    Point2="-31.4000040978192,23.4478727360049"
+                    Point3="-31.4000040978192,27.4478727360049" />
+                  <mssgle:LineSegment
+                    End="-31.4000040978192,50.5666659735971" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Data Flow Task\NFL DW">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Data Flow Task\Lookup TeamID">
+    <Properties>
+      <Property>
+        <Name>OverwriteParamsSQLProp</Name>
+        <Value
+          type="q2:string">false</Value>
+      </Property>
+      <Property>
+        <Name>UsedTableName</Name>
+        <Value
+          type="q3:string">[dbo].[Teams]</Value>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q4:string">0</Value>
+      </Property>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>
