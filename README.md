@@ -12,7 +12,6 @@
 - MS SQL Server
 - SSDT
 ## TODOs
-- [] remove and update
 - [] UI
 - [] SSIS, SSRS, SSAS
   
