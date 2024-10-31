@@ -1,0 +1,21 @@
+﻿create table PlayerStats (
+	PlayerStatsId int primary key identity(1,1),
+    PlayerID int,
+    GameID int,
+	PassesCompleted int,
+	PassesAttempted int,
+    PassingYards int,
+    PassingTouchdowns int,
+    InterceptionsThrown int,
+	RushingAttempts int,
+    RushingYards int,
+    RushingTouchdowns int,
+	PassTargets int,
+	Receptions int,
+    RecievingYards int,
+    RecievingTouchdowns int,
+	FieldGoalsAttempted int,
+	FieldGoalsMade int,
+	foreign key (PlayerID) references Players(PlayerID),
+    foreign key (GameID) references Games(GameID)
+);
