@@ -14,4 +14,5 @@
 ## TODOs
 - [] UI
 - [] SSIS, SSRS, SSAS
+- [] add birthday and stadium
   
