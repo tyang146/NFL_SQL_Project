@@ -1,5 +1,5 @@
 ## NFL SQL Project
-![diagram](https://github.com/tyang146/NFL-SQL-Project/blob/main/DiagramPhoto/1.PNG)
+![diagram](https://github.com/tyang146/NFL_SQL_Project/blob/master/DiagramPhoto/1.PNG)
 ## Features
 - SQL and T-SQL
 - Views
