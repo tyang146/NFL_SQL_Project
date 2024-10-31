@@ -60,6 +60,7 @@
     <Folder Include="dbo\Tables\" />
     <Folder Include="dbo\Views\" />
     <Folder Include="dbo\Stored Procedures\" />
+    <Folder Include="Scripts\" />
   </ItemGroup>
   <ItemGroup>
     <Build Include="dbo\Tables\Games.sql" />
@@ -73,5 +74,10 @@
     <Build Include="dbo\Views\RushingStats.sql" />
     <Build Include="dbo\Stored Procedures\AddPlayerStats.sql" />
     <Build Include="dbo\Stored Procedures\UpdateSeasonStats.sql" />
+    <None Include="Scripts\ScriptsIgnoredOnImport.sql" />
+    <Build Include="dbo\Stored Procedures\SelectAllGamesPlayedByTeamId.sql" />
+    <Build Include="dbo\Stored Procedures\GetAllGameDetails.sql" />
+    <Build Include="dbo\Stored Procedures\SelectAllPlayersByPosition.sql" />
+    <PostDeploy Include="Scripts\ScriptsInsertNFLTeams.sql" />
   </ItemGroup>
 </Project>
