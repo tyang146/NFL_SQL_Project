@@ -9,9 +9,9 @@ Post-Deployment Script Template
                SELECT * FROM [$(TableName)]					
 --------------------------------------------------------------------------------------
 */
--- Insert the whole 32 NFL teams into the Teams table
+-- Insert the whole 32 NFL teams into the Teams table if they don't already exist
 INSERT INTO Teams (TeamName, [Location], Conference, Division)
-VALUES 
+SELECT * FROM (VALUES 
     -- NFC East
     ('Dallas Cowboys', 'Dallas', 'NFC', 'East'),
     ('New York Giants', 'New York', 'NFC', 'East'),
@@ -58,4 +58,9 @@ VALUES
     ('Denver Broncos', 'Denver', 'AFC', 'West'),
     ('Kansas City Chiefs', 'Kansas City', 'AFC', 'West'),
     ('Las Vegas Raiders', 'Las Vegas', 'AFC', 'West'),
-    ('Los Angeles Chargers', 'Los Angeles', 'AFC', 'West');
+    ('Los Angeles Chargers', 'Los Angeles', 'AFC', 'West')) AS TeamsToInsert(TeamName, Location, Conference, Division)
+WHERE NOT EXISTS (
+    SELECT 1 
+    FROM Teams t 
+    WHERE t.TeamName = TeamsToInsert.TeamName
+);
