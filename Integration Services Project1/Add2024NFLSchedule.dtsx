@@ -11,23 +11,11 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="Add2024NFLSchedule"
   DTS:PackageType="5"
-  DTS:VersionBuild="49"
-  DTS:VersionGUID="{41582A38-5FF4-4CD8-9620-2C62CF7D6686}">
+  DTS:VersionBuild="55"
+  DTS:VersionGUID="{84ADFAA6-1522-4EA8-81F0-8FF4E29FA1EB}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
-    <DTS:ConnectionManager
-      DTS:refId="Package.ConnectionManagers[(localdb)\ProjectModels.NFL-SQL-Project]"
-      DTS:CreationName="OLEDB"
-      DTS:DTSID="{F4184C50-1FD4-40D6-8B78-F5EB7D2A92E5}"
-      DTS:ObjectName="(localdb)\ProjectModels.NFL-SQL-Project">
-      <DTS:ObjectData>
-        <DTS:ConnectionManager
-          DTS:ConnectRetryCount="1"
-          DTS:ConnectRetryInterval="5"
-          DTS:ConnectionString="Data Source=(localdb)\ProjectModels;Initial Catalog=NFL-SQL-Project;Provider=MSOLEDBSQL.1;Integrated Security=SSPI;Auto Translate=False;" />
-      </DTS:ObjectData>
-    </DTS:ConnectionManager>
     <DTS:ConnectionManager
       DTS:refId="Package.ConnectionManagers[Flat File Connection Manager]"
       DTS:CreationName="FLATFILE"
@@ -52,7 +40,7 @@
               DTS:DataType="130"
               DTS:TextQualified="True"
               DTS:ObjectName="HomeTeam"
-              DTS:DTSID="{3B6EE377-1CEA-4E67-BFFB-1A6A106018A3}"
+              DTS:DTSID="{C11B9267-A08D-44AE-A593-DB2DF8393E89}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -61,7 +49,7 @@
               DTS:DataType="130"
               DTS:TextQualified="True"
               DTS:ObjectName="AwayTeam"
-              DTS:DTSID="{4ADBD4C4-1E6B-4CD0-ACE1-26F50B10780A}"
+              DTS:DTSID="{859765E6-5A22-4735-AB39-355B61107BF4}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -69,7 +57,7 @@
               DTS:DataType="133"
               DTS:TextQualified="True"
               DTS:ObjectName="Date"
-              DTS:DTSID="{81FED0E1-D4C7-435D-B8C8-EB5ABEC3A9B9}"
+              DTS:DTSID="{62447DAD-1148-4F8A-9BD8-29619F2725DE}"
               DTS:CreationName="" />
           </DTS:FlatFileColumns>
         </DTS:ConnectionManager>
@@ -176,11 +164,11 @@
           version="1">
           <components>
             <component
-              refId="Package\Data Flow Task\Lookup"
+              refId="Package\Data Flow Task\also Lookup away team id"
               componentClassID="Microsoft.Lookup"
               contactInfo="Lookup;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;6"
               description="Joins additional columns to the data flow by looking up values in a table. For example, join to the 'employee id' column the employees table to get 'hire date' and 'employee name'. We recommend this transformation when the lookup table can fit into memory."
-              name="Lookup"
+              name="also Lookup away team id"
               usesDispositions="true"
               version="6">
               <properties>
@@ -227,481 +215,7 @@ where [refTable].[TeamName] = ?</property>
                 <property
                   dataType="System.String"
                   description="Indicates whether to reference metadata in an XML format."
-                  name="ReferenceMetadataXml">&lt;referenceMetadata&gt;&lt;referenceColumns&gt;&lt;referenceColumn name="TeamID" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="TeamName" dataType="DT_WSTR" length="50" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="Location" dataType="DT_WSTR" length="50" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="Conference" dataType="DT_WSTR" length="10" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="Division" dataType="DT_WSTR" length="10" precision="0" scale="0" codePage="0"/&gt;&lt;/referenceColumns&gt;&lt;/referenceMetadata&gt;</property>
-                <property
-                  containsID="true"
-                  dataType="System.String"
-                  description="Specifies the list of lineage identifiers that map to the parameters that the SQL statement in the SQLCommand property uses. Entries in the list are separated by semicolons."
-                  name="ParameterMap">#{Package\Data Flow Task\nfl schedule 1.Outputs[Flat File Source Output].Columns[HomeTeam]};</property>
-                <property
-                  dataType="System.Int32"
-                  description="Specifies the column code page to use when code page information is unavailable from the data source."
-                  name="DefaultCodePage">1252</property>
-                <property
-                  dataType="System.Boolean"
-                  description="Determines whether duplicate keys in the reference data should be treated as errors when full cache mode is used."
-                  name="TreatDuplicateKeysAsError">false</property>
-              </properties>
-              <connections>
-                <connection
-                  refId="Package\Data Flow Task\Lookup.Connections[OleDbConnection]"
-                  connectionManagerID="Package.ConnectionManagers[(localdb)\ProjectModels.NFL-SQL-Project]"
-                  connectionManagerRefId="Package.ConnectionManagers[(localdb)\ProjectModels.NFL-SQL-Project]"
-                  description="Connection manager used to access lookup data."
-                  name="OleDbConnection" />
-              </connections>
-              <inputs>
-                <input
-                  refId="Package\Data Flow Task\Lookup.Inputs[Lookup Input]"
-                  name="Lookup Input">
-                  <inputColumns>
-                    <inputColumn
-                      refId="Package\Data Flow Task\Lookup.Inputs[Lookup Input].Columns[HomeTeam]"
-                      cachedDataType="wstr"
-                      cachedLength="50"
-                      cachedName="HomeTeam"
-                      lineageId="Package\Data Flow Task\nfl schedule 1.Outputs[Flat File Source Output].Columns[HomeTeam]">
-                      <properties>
-                        <property
-                          dataType="System.String"
-                          description="Specifies the column in the reference table that a column joins."
-                          name="JoinToReferenceColumn">TeamName</property>
-                        <property
-                          dataType="System.Null"
-                          description="Specifies the column in the reference table from which a column is copied."
-                          name="CopyFromReferenceColumn" />
-                      </properties>
-                    </inputColumn>
-                  </inputColumns>
-                  <externalMetadataColumns />
-                </input>
-              </inputs>
-              <outputs>
-                <output
-                  refId="Package\Data Flow Task\Lookup.Outputs[Lookup Match Output]"
-                  errorOrTruncationOperation="Lookup"
-                  exclusionGroup="1"
-                  name="Lookup Match Output"
-                  synchronousInputId="Package\Data Flow Task\Lookup.Inputs[Lookup Input]">
-                  <outputColumns>
-                    <outputColumn
-                      refId="Package\Data Flow Task\Lookup.Outputs[Lookup Match Output].Columns[HomeTeamID]"
-                      dataType="i4"
-                      errorOrTruncationOperation="Copy Column"
-                      lineageId="Package\Data Flow Task\Lookup.Outputs[Lookup Match Output].Columns[HomeTeamID]"
-                      name="HomeTeamID"
-                      truncationRowDisposition="FailComponent">
-                      <properties>
-                        <property
-                          dataType="System.String"
-                          description="Specifies the column in the reference table from which a column is copied."
-                          name="CopyFromReferenceColumn">TeamID</property>
-                      </properties>
-                    </outputColumn>
-                  </outputColumns>
-                  <externalMetadataColumns />
-                </output>
-                <output
-                  refId="Package\Data Flow Task\Lookup.Outputs[Lookup No Match Output]"
-                  description="The Lookup output that handles rows with no matching entries in the reference dataset. Use this output when the NoMatchBehavior property is set to &quot;Send rows with no matching entries to the no match output.&quot;"
-                  exclusionGroup="1"
-                  name="Lookup No Match Output"
-                  synchronousInputId="Package\Data Flow Task\Lookup.Inputs[Lookup Input]">
-                  <externalMetadataColumns />
-                </output>
-                <output
-                  refId="Package\Data Flow Task\Lookup.Outputs[Lookup Error Output]"
-                  exclusionGroup="1"
-                  isErrorOut="true"
-                  name="Lookup Error Output"
-                  synchronousInputId="Package\Data Flow Task\Lookup.Inputs[Lookup Input]">
-                  <outputColumns>
-                    <outputColumn
-                      refId="Package\Data Flow Task\Lookup.Outputs[Lookup Error Output].Columns[ErrorCode]"
-                      dataType="i4"
-                      lineageId="Package\Data Flow Task\Lookup.Outputs[Lookup Error Output].Columns[ErrorCode]"
-                      name="ErrorCode"
-                      specialFlags="1" />
-                    <outputColumn
-                      refId="Package\Data Flow Task\Lookup.Outputs[Lookup Error Output].Columns[ErrorColumn]"
-                      dataType="i4"
-                      lineageId="Package\Data Flow Task\Lookup.Outputs[Lookup Error Output].Columns[ErrorColumn]"
-                      name="ErrorColumn"
-                      specialFlags="2" />
-                  </outputColumns>
-                  <externalMetadataColumns />
-                </output>
-              </outputs>
-            </component>
-            <component
-              refId="Package\Data Flow Task\Lookup 1"
-              componentClassID="Microsoft.Lookup"
-              contactInfo="Lookup;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;6"
-              description="Joins additional columns to the data flow by looking up values in a table. For example, join to the 'employee id' column the employees table to get 'hire date' and 'employee name'. We recommend this transformation when the lookup table can fit into memory."
-              name="Lookup 1"
-              usesDispositions="true"
-              version="6">
-              <properties>
-                <property
-                  dataType="System.String"
-                  description="Specifies the SQL statement that generates the lookup table."
-                  expressionType="Notify"
-                  name="SqlCommand"
-                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from [dbo].[Teams]</property>
-                <property
-                  dataType="System.String"
-                  description="Specifies a SQL statement that uses parameters to generate the lookup table."
-                  expressionType="Notify"
-                  name="SqlCommandParam"
-                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from (select * from [dbo].[Teams]) [refTable]
-where [refTable].[TeamName] = ?</property>
-                <property
-                  dataType="System.Int32"
-                  description="Specifies the type of connection used to access the reference dataset."
-                  name="ConnectionType"
-                  typeConverter="LookupConnectionType">0</property>
-                <property
-                  dataType="System.Int32"
-                  description="Specifies the cache type of the lookup table."
-                  name="CacheType"
-                  typeConverter="CacheType">0</property>
-                <property
-                  dataType="System.Int32"
-                  description="Specifies how the Lookup transformation handles rows without matching entries in the reference data set."
-                  name="NoMatchBehavior"
-                  typeConverter="LookupNoMatchBehavior">1</property>
-                <property
-                  dataType="System.Int32"
-                  description="Specifies the percentage of the cache that is allocated for rows with no matching entries in the reference dataset."
-                  name="NoMatchCachePercentage">0</property>
-                <property
-                  dataType="System.Int32"
-                  description="Maximum Memory Usage for Reference Cache on a 32 bit platform."
-                  name="MaxMemoryUsage">25</property>
-                <property
-                  dataType="System.Int64"
-                  description="Maximum Memory Usage for Reference Cache on a 64 bit platform."
-                  name="MaxMemoryUsage64">25</property>
-                <property
-                  dataType="System.String"
-                  description="Indicates whether to reference metadata in an XML format."
-                  name="ReferenceMetadataXml">&lt;referenceMetadata&gt;&lt;referenceColumns&gt;&lt;referenceColumn name="TeamID" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="TeamName" dataType="DT_WSTR" length="50" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="Location" dataType="DT_WSTR" length="50" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="Conference" dataType="DT_WSTR" length="10" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="Division" dataType="DT_WSTR" length="10" precision="0" scale="0" codePage="0"/&gt;&lt;/referenceColumns&gt;&lt;/referenceMetadata&gt;</property>
-                <property
-                  containsID="true"
-                  dataType="System.String"
-                  description="Specifies the list of lineage identifiers that map to the parameters that the SQL statement in the SQLCommand property uses. Entries in the list are separated by semicolons."
-                  name="ParameterMap">#{Package\Data Flow Task\nfl schedule 1.Outputs[Flat File Source Output].Columns[AwayTeam]};</property>
-                <property
-                  dataType="System.Int32"
-                  description="Specifies the column code page to use when code page information is unavailable from the data source."
-                  name="DefaultCodePage">1252</property>
-                <property
-                  dataType="System.Boolean"
-                  description="Determines whether duplicate keys in the reference data should be treated as errors when full cache mode is used."
-                  name="TreatDuplicateKeysAsError">false</property>
-              </properties>
-              <connections>
-                <connection
-                  refId="Package\Data Flow Task\Lookup 1.Connections[OleDbConnection]"
-                  connectionManagerID="Package.ConnectionManagers[(localdb)\ProjectModels.NFL-SQL-Project]"
-                  connectionManagerRefId="Package.ConnectionManagers[(localdb)\ProjectModels.NFL-SQL-Project]"
-                  description="Connection manager used to access lookup data."
-                  name="OleDbConnection" />
-              </connections>
-              <inputs>
-                <input
-                  refId="Package\Data Flow Task\Lookup 1.Inputs[Lookup Input]"
-                  name="Lookup Input">
-                  <inputColumns>
-                    <inputColumn
-                      refId="Package\Data Flow Task\Lookup 1.Inputs[Lookup Input].Columns[AwayTeam]"
-                      cachedDataType="wstr"
-                      cachedLength="50"
-                      cachedName="AwayTeam"
-                      lineageId="Package\Data Flow Task\nfl schedule 1.Outputs[Flat File Source Output].Columns[AwayTeam]">
-                      <properties>
-                        <property
-                          dataType="System.String"
-                          description="Specifies the column in the reference table that a column joins."
-                          name="JoinToReferenceColumn">TeamName</property>
-                        <property
-                          dataType="System.Null"
-                          description="Specifies the column in the reference table from which a column is copied."
-                          name="CopyFromReferenceColumn" />
-                      </properties>
-                    </inputColumn>
-                  </inputColumns>
-                  <externalMetadataColumns />
-                </input>
-              </inputs>
-              <outputs>
-                <output
-                  refId="Package\Data Flow Task\Lookup 1.Outputs[Lookup Match Output]"
-                  errorOrTruncationOperation="Lookup"
-                  exclusionGroup="1"
-                  name="Lookup Match Output"
-                  synchronousInputId="Package\Data Flow Task\Lookup 1.Inputs[Lookup Input]">
-                  <outputColumns>
-                    <outputColumn
-                      refId="Package\Data Flow Task\Lookup 1.Outputs[Lookup Match Output].Columns[AwayTeamID]"
-                      dataType="i4"
-                      errorOrTruncationOperation="Copy Column"
-                      lineageId="Package\Data Flow Task\Lookup 1.Outputs[Lookup Match Output].Columns[AwayTeamID]"
-                      name="AwayTeamID"
-                      truncationRowDisposition="FailComponent">
-                      <properties>
-                        <property
-                          dataType="System.String"
-                          description="Specifies the column in the reference table from which a column is copied."
-                          name="CopyFromReferenceColumn">TeamID</property>
-                      </properties>
-                    </outputColumn>
-                  </outputColumns>
-                  <externalMetadataColumns />
-                </output>
-                <output
-                  refId="Package\Data Flow Task\Lookup 1.Outputs[Lookup No Match Output]"
-                  description="The Lookup output that handles rows with no matching entries in the reference dataset. Use this output when the NoMatchBehavior property is set to &quot;Send rows with no matching entries to the no match output.&quot;"
-                  exclusionGroup="1"
-                  name="Lookup No Match Output"
-                  synchronousInputId="Package\Data Flow Task\Lookup 1.Inputs[Lookup Input]">
-                  <externalMetadataColumns />
-                </output>
-                <output
-                  refId="Package\Data Flow Task\Lookup 1.Outputs[Lookup Error Output]"
-                  exclusionGroup="1"
-                  isErrorOut="true"
-                  name="Lookup Error Output"
-                  synchronousInputId="Package\Data Flow Task\Lookup 1.Inputs[Lookup Input]">
-                  <outputColumns>
-                    <outputColumn
-                      refId="Package\Data Flow Task\Lookup 1.Outputs[Lookup Error Output].Columns[ErrorCode]"
-                      dataType="i4"
-                      lineageId="Package\Data Flow Task\Lookup 1.Outputs[Lookup Error Output].Columns[ErrorCode]"
-                      name="ErrorCode"
-                      specialFlags="1" />
-                    <outputColumn
-                      refId="Package\Data Flow Task\Lookup 1.Outputs[Lookup Error Output].Columns[ErrorColumn]"
-                      dataType="i4"
-                      lineageId="Package\Data Flow Task\Lookup 1.Outputs[Lookup Error Output].Columns[ErrorColumn]"
-                      name="ErrorColumn"
-                      specialFlags="2" />
-                  </outputColumns>
-                  <externalMetadataColumns />
-                </output>
-              </outputs>
-            </component>
-            <component
-              refId="Package\Data Flow Task\Lookup 3"
-              componentClassID="Microsoft.Lookup"
-              contactInfo="Lookup;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;6"
-              description="Joins additional columns to the data flow by looking up values in a table. For example, join to the 'employee id' column the employees table to get 'hire date' and 'employee name'. We recommend this transformation when the lookup table can fit into memory."
-              name="Lookup 3"
-              usesDispositions="true"
-              version="6">
-              <properties>
-                <property
-                  dataType="System.String"
-                  description="Specifies the SQL statement that generates the lookup table."
-                  expressionType="Notify"
-                  name="SqlCommand"
-                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from [dbo].[Teams]</property>
-                <property
-                  dataType="System.String"
-                  description="Specifies a SQL statement that uses parameters to generate the lookup table."
-                  expressionType="Notify"
-                  name="SqlCommandParam"
-                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from (select * from [dbo].[Teams]) [refTable]
-where [refTable].[TeamName] = ?</property>
-                <property
-                  dataType="System.Int32"
-                  description="Specifies the type of connection used to access the reference dataset."
-                  name="ConnectionType"
-                  typeConverter="LookupConnectionType">0</property>
-                <property
-                  dataType="System.Int32"
-                  description="Specifies the cache type of the lookup table."
-                  name="CacheType"
-                  typeConverter="CacheType">0</property>
-                <property
-                  dataType="System.Int32"
-                  description="Specifies how the Lookup transformation handles rows without matching entries in the reference data set."
-                  name="NoMatchBehavior"
-                  typeConverter="LookupNoMatchBehavior">1</property>
-                <property
-                  dataType="System.Int32"
-                  description="Specifies the percentage of the cache that is allocated for rows with no matching entries in the reference dataset."
-                  name="NoMatchCachePercentage">0</property>
-                <property
-                  dataType="System.Int32"
-                  description="Maximum Memory Usage for Reference Cache on a 32 bit platform."
-                  name="MaxMemoryUsage">25</property>
-                <property
-                  dataType="System.Int64"
-                  description="Maximum Memory Usage for Reference Cache on a 64 bit platform."
-                  name="MaxMemoryUsage64">25</property>
-                <property
-                  dataType="System.String"
-                  description="Indicates whether to reference metadata in an XML format."
-                  name="ReferenceMetadataXml">&lt;referenceMetadata&gt;&lt;referenceColumns&gt;&lt;referenceColumn name="TeamID" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="TeamName" dataType="DT_WSTR" length="50" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="Location" dataType="DT_WSTR" length="50" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="Conference" dataType="DT_WSTR" length="10" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="Division" dataType="DT_WSTR" length="10" precision="0" scale="0" codePage="0"/&gt;&lt;/referenceColumns&gt;&lt;/referenceMetadata&gt;</property>
-                <property
-                  containsID="true"
-                  dataType="System.String"
-                  description="Specifies the list of lineage identifiers that map to the parameters that the SQL statement in the SQLCommand property uses. Entries in the list are separated by semicolons."
-                  name="ParameterMap">#{Package\Data Flow Task\nfl schedule 2.Outputs[Flat File Source Output].Columns[Winner tie]};</property>
-                <property
-                  dataType="System.Int32"
-                  description="Specifies the column code page to use when code page information is unavailable from the data source."
-                  name="DefaultCodePage">1252</property>
-                <property
-                  dataType="System.Boolean"
-                  description="Determines whether duplicate keys in the reference data should be treated as errors when full cache mode is used."
-                  name="TreatDuplicateKeysAsError">false</property>
-              </properties>
-              <connections>
-                <connection
-                  refId="Package\Data Flow Task\Lookup 3.Connections[OleDbConnection]"
-                  connectionManagerID="Package.ConnectionManagers[(localdb)\ProjectModels.NFL-SQL-Project]"
-                  connectionManagerRefId="Package.ConnectionManagers[(localdb)\ProjectModels.NFL-SQL-Project]"
-                  description="Connection manager used to access lookup data."
-                  name="OleDbConnection" />
-              </connections>
-              <inputs>
-                <input
-                  refId="Package\Data Flow Task\Lookup 3.Inputs[Lookup Input]"
-                  name="Lookup Input">
-                  <inputColumns>
-                    <inputColumn
-                      refId="Package\Data Flow Task\Lookup 3.Inputs[Lookup Input].Columns[Winner tie]"
-                      cachedDataType="wstr"
-                      cachedLength="50"
-                      cachedName="Winner tie"
-                      lineageId="Package\Data Flow Task\nfl schedule 2.Outputs[Flat File Source Output].Columns[Winner tie]">
-                      <properties>
-                        <property
-                          dataType="System.String"
-                          description="Specifies the column in the reference table that a column joins."
-                          name="JoinToReferenceColumn">TeamName</property>
-                        <property
-                          dataType="System.Null"
-                          description="Specifies the column in the reference table from which a column is copied."
-                          name="CopyFromReferenceColumn" />
-                      </properties>
-                    </inputColumn>
-                  </inputColumns>
-                  <externalMetadataColumns />
-                </input>
-              </inputs>
-              <outputs>
-                <output
-                  refId="Package\Data Flow Task\Lookup 3.Outputs[Lookup Match Output]"
-                  errorOrTruncationOperation="Lookup"
-                  exclusionGroup="1"
-                  name="Lookup Match Output"
-                  synchronousInputId="Package\Data Flow Task\Lookup 3.Inputs[Lookup Input]">
-                  <outputColumns>
-                    <outputColumn
-                      refId="Package\Data Flow Task\Lookup 3.Outputs[Lookup Match Output].Columns[HomeTeamID]"
-                      dataType="i4"
-                      errorOrTruncationOperation="Copy Column"
-                      lineageId="Package\Data Flow Task\Lookup 3.Outputs[Lookup Match Output].Columns[HomeTeamID]"
-                      name="HomeTeamID"
-                      truncationRowDisposition="FailComponent">
-                      <properties>
-                        <property
-                          dataType="System.String"
-                          description="Specifies the column in the reference table from which a column is copied."
-                          name="CopyFromReferenceColumn">TeamID</property>
-                      </properties>
-                    </outputColumn>
-                  </outputColumns>
-                  <externalMetadataColumns />
-                </output>
-                <output
-                  refId="Package\Data Flow Task\Lookup 3.Outputs[Lookup No Match Output]"
-                  description="The Lookup output that handles rows with no matching entries in the reference dataset. Use this output when the NoMatchBehavior property is set to &quot;Send rows with no matching entries to the no match output.&quot;"
-                  exclusionGroup="1"
-                  name="Lookup No Match Output"
-                  synchronousInputId="Package\Data Flow Task\Lookup 3.Inputs[Lookup Input]">
-                  <externalMetadataColumns />
-                </output>
-                <output
-                  refId="Package\Data Flow Task\Lookup 3.Outputs[Lookup Error Output]"
-                  exclusionGroup="1"
-                  isErrorOut="true"
-                  name="Lookup Error Output"
-                  synchronousInputId="Package\Data Flow Task\Lookup 3.Inputs[Lookup Input]">
-                  <outputColumns>
-                    <outputColumn
-                      refId="Package\Data Flow Task\Lookup 3.Outputs[Lookup Error Output].Columns[ErrorCode]"
-                      dataType="i4"
-                      lineageId="Package\Data Flow Task\Lookup 3.Outputs[Lookup Error Output].Columns[ErrorCode]"
-                      name="ErrorCode"
-                      specialFlags="1" />
-                    <outputColumn
-                      refId="Package\Data Flow Task\Lookup 3.Outputs[Lookup Error Output].Columns[ErrorColumn]"
-                      dataType="i4"
-                      lineageId="Package\Data Flow Task\Lookup 3.Outputs[Lookup Error Output].Columns[ErrorColumn]"
-                      name="ErrorColumn"
-                      specialFlags="2" />
-                  </outputColumns>
-                  <externalMetadataColumns />
-                </output>
-              </outputs>
-            </component>
-            <component
-              refId="Package\Data Flow Task\Lookup 4"
-              componentClassID="Microsoft.Lookup"
-              contactInfo="Lookup;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;6"
-              description="Joins additional columns to the data flow by looking up values in a table. For example, join to the 'employee id' column the employees table to get 'hire date' and 'employee name'. We recommend this transformation when the lookup table can fit into memory."
-              name="Lookup 4"
-              usesDispositions="true"
-              version="6">
-              <properties>
-                <property
-                  dataType="System.String"
-                  description="Specifies the SQL statement that generates the lookup table."
-                  expressionType="Notify"
-                  name="SqlCommand"
-                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from [dbo].[Teams]</property>
-                <property
-                  dataType="System.String"
-                  description="Specifies a SQL statement that uses parameters to generate the lookup table."
-                  expressionType="Notify"
-                  name="SqlCommandParam"
-                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from (select * from [dbo].[Teams]) [refTable]
-where [refTable].[TeamName] = ?</property>
-                <property
-                  dataType="System.Int32"
-                  description="Specifies the type of connection used to access the reference dataset."
-                  name="ConnectionType"
-                  typeConverter="LookupConnectionType">0</property>
-                <property
-                  dataType="System.Int32"
-                  description="Specifies the cache type of the lookup table."
-                  name="CacheType"
-                  typeConverter="CacheType">0</property>
-                <property
-                  dataType="System.Int32"
-                  description="Specifies how the Lookup transformation handles rows without matching entries in the reference data set."
-                  name="NoMatchBehavior"
-                  typeConverter="LookupNoMatchBehavior">1</property>
-                <property
-                  dataType="System.Int32"
-                  description="Specifies the percentage of the cache that is allocated for rows with no matching entries in the reference dataset."
-                  name="NoMatchCachePercentage">0</property>
-                <property
-                  dataType="System.Int32"
-                  description="Maximum Memory Usage for Reference Cache on a 32 bit platform."
-                  name="MaxMemoryUsage">25</property>
-                <property
-                  dataType="System.Int64"
-                  description="Maximum Memory Usage for Reference Cache on a 64 bit platform."
-                  name="MaxMemoryUsage64">25</property>
-                <property
-                  dataType="System.String"
-                  description="Indicates whether to reference metadata in an XML format."
-                  name="ReferenceMetadataXml">&lt;referenceMetadata&gt;&lt;referenceColumns&gt;&lt;referenceColumn name="TeamID" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="TeamName" dataType="DT_WSTR" length="50" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="Location" dataType="DT_WSTR" length="50" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="Conference" dataType="DT_WSTR" length="10" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="Division" dataType="DT_WSTR" length="10" precision="0" scale="0" codePage="0"/&gt;&lt;/referenceColumns&gt;&lt;/referenceMetadata&gt;</property>
+                  name="ReferenceMetadataXml">&lt;referenceMetadata&gt;&lt;referenceColumns&gt;&lt;referenceColumn name="TeamID" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="TeamAbbreviations" dataType="DT_WSTR" length="3" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="TeamName" dataType="DT_WSTR" length="50" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="Location" dataType="DT_WSTR" length="50" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="Conference" dataType="DT_WSTR" length="10" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="Division" dataType="DT_WSTR" length="10" precision="0" scale="0" codePage="0"/&gt;&lt;/referenceColumns&gt;&lt;/referenceMetadata&gt;</property>
                 <property
                   containsID="true"
                   dataType="System.String"
@@ -718,19 +232,19 @@ where [refTable].[TeamName] = ?</property>
               </properties>
               <connections>
                 <connection
-                  refId="Package\Data Flow Task\Lookup 4.Connections[OleDbConnection]"
-                  connectionManagerID="Package.ConnectionManagers[(localdb)\ProjectModels.NFL-SQL-Project]"
-                  connectionManagerRefId="Package.ConnectionManagers[(localdb)\ProjectModels.NFL-SQL-Project]"
+                  refId="Package\Data Flow Task\also Lookup away team id.Connections[OleDbConnection]"
+                  connectionManagerID="{184BFE5E-2A64-42CF-B95F-B3245CB3C998}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[localdb_destination]"
                   description="Connection manager used to access lookup data."
                   name="OleDbConnection" />
               </connections>
               <inputs>
                 <input
-                  refId="Package\Data Flow Task\Lookup 4.Inputs[Lookup Input]"
+                  refId="Package\Data Flow Task\also Lookup away team id.Inputs[Lookup Input]"
                   name="Lookup Input">
                   <inputColumns>
                     <inputColumn
-                      refId="Package\Data Flow Task\Lookup 4.Inputs[Lookup Input].Columns[Loser tie]"
+                      refId="Package\Data Flow Task\also Lookup away team id.Inputs[Lookup Input].Columns[Loser tie]"
                       cachedDataType="wstr"
                       cachedLength="50"
                       cachedName="Loser tie"
@@ -752,17 +266,17 @@ where [refTable].[TeamName] = ?</property>
               </inputs>
               <outputs>
                 <output
-                  refId="Package\Data Flow Task\Lookup 4.Outputs[Lookup Match Output]"
+                  refId="Package\Data Flow Task\also Lookup away team id.Outputs[Lookup Match Output]"
                   errorOrTruncationOperation="Lookup"
                   exclusionGroup="1"
                   name="Lookup Match Output"
-                  synchronousInputId="Package\Data Flow Task\Lookup 4.Inputs[Lookup Input]">
+                  synchronousInputId="Package\Data Flow Task\also Lookup away team id.Inputs[Lookup Input]">
                   <outputColumns>
                     <outputColumn
-                      refId="Package\Data Flow Task\Lookup 4.Outputs[Lookup Match Output].Columns[AwayTeamID]"
+                      refId="Package\Data Flow Task\also Lookup away team id.Outputs[Lookup Match Output].Columns[AwayTeamID]"
                       dataType="i4"
                       errorOrTruncationOperation="Copy Column"
-                      lineageId="Package\Data Flow Task\Lookup 4.Outputs[Lookup Match Output].Columns[AwayTeamID]"
+                      lineageId="Package\Data Flow Task\also Lookup away team id.Outputs[Lookup Match Output].Columns[AwayTeamID]"
                       name="AwayTeamID"
                       truncationRowDisposition="FailComponent">
                       <properties>
@@ -776,30 +290,504 @@ where [refTable].[TeamName] = ?</property>
                   <externalMetadataColumns />
                 </output>
                 <output
-                  refId="Package\Data Flow Task\Lookup 4.Outputs[Lookup No Match Output]"
+                  refId="Package\Data Flow Task\also Lookup away team id.Outputs[Lookup No Match Output]"
                   description="The Lookup output that handles rows with no matching entries in the reference dataset. Use this output when the NoMatchBehavior property is set to &quot;Send rows with no matching entries to the no match output.&quot;"
                   exclusionGroup="1"
                   name="Lookup No Match Output"
-                  synchronousInputId="Package\Data Flow Task\Lookup 4.Inputs[Lookup Input]">
+                  synchronousInputId="Package\Data Flow Task\also Lookup away team id.Inputs[Lookup Input]">
                   <externalMetadataColumns />
                 </output>
                 <output
-                  refId="Package\Data Flow Task\Lookup 4.Outputs[Lookup Error Output]"
+                  refId="Package\Data Flow Task\also Lookup away team id.Outputs[Lookup Error Output]"
                   exclusionGroup="1"
                   isErrorOut="true"
                   name="Lookup Error Output"
-                  synchronousInputId="Package\Data Flow Task\Lookup 4.Inputs[Lookup Input]">
+                  synchronousInputId="Package\Data Flow Task\also Lookup away team id.Inputs[Lookup Input]">
                   <outputColumns>
                     <outputColumn
-                      refId="Package\Data Flow Task\Lookup 4.Outputs[Lookup Error Output].Columns[ErrorCode]"
+                      refId="Package\Data Flow Task\also Lookup away team id.Outputs[Lookup Error Output].Columns[ErrorCode]"
                       dataType="i4"
-                      lineageId="Package\Data Flow Task\Lookup 4.Outputs[Lookup Error Output].Columns[ErrorCode]"
+                      lineageId="Package\Data Flow Task\also Lookup away team id.Outputs[Lookup Error Output].Columns[ErrorCode]"
                       name="ErrorCode"
                       specialFlags="1" />
                     <outputColumn
-                      refId="Package\Data Flow Task\Lookup 4.Outputs[Lookup Error Output].Columns[ErrorColumn]"
+                      refId="Package\Data Flow Task\also Lookup away team id.Outputs[Lookup Error Output].Columns[ErrorColumn]"
                       dataType="i4"
-                      lineageId="Package\Data Flow Task\Lookup 4.Outputs[Lookup Error Output].Columns[ErrorColumn]"
+                      lineageId="Package\Data Flow Task\also Lookup away team id.Outputs[Lookup Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Data Flow Task\also Lookup home team id"
+              componentClassID="Microsoft.Lookup"
+              contactInfo="Lookup;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;6"
+              description="Joins additional columns to the data flow by looking up values in a table. For example, join to the 'employee id' column the employees table to get 'hire date' and 'employee name'. We recommend this transformation when the lookup table can fit into memory."
+              name="also Lookup home team id"
+              usesDispositions="true"
+              version="6">
+              <properties>
+                <property
+                  dataType="System.String"
+                  description="Specifies the SQL statement that generates the lookup table."
+                  expressionType="Notify"
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from [dbo].[Teams]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies a SQL statement that uses parameters to generate the lookup table."
+                  expressionType="Notify"
+                  name="SqlCommandParam"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from (select * from [dbo].[Teams]) [refTable]
+where [refTable].[TeamName] = ?</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the type of connection used to access the reference dataset."
+                  name="ConnectionType"
+                  typeConverter="LookupConnectionType">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the cache type of the lookup table."
+                  name="CacheType"
+                  typeConverter="CacheType">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies how the Lookup transformation handles rows without matching entries in the reference data set."
+                  name="NoMatchBehavior"
+                  typeConverter="LookupNoMatchBehavior">1</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the percentage of the cache that is allocated for rows with no matching entries in the reference dataset."
+                  name="NoMatchCachePercentage">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Maximum Memory Usage for Reference Cache on a 32 bit platform."
+                  name="MaxMemoryUsage">25</property>
+                <property
+                  dataType="System.Int64"
+                  description="Maximum Memory Usage for Reference Cache on a 64 bit platform."
+                  name="MaxMemoryUsage64">25</property>
+                <property
+                  dataType="System.String"
+                  description="Indicates whether to reference metadata in an XML format."
+                  name="ReferenceMetadataXml">&lt;referenceMetadata&gt;&lt;referenceColumns&gt;&lt;referenceColumn name="TeamID" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="TeamAbbreviations" dataType="DT_WSTR" length="3" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="TeamName" dataType="DT_WSTR" length="50" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="Location" dataType="DT_WSTR" length="50" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="Conference" dataType="DT_WSTR" length="10" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="Division" dataType="DT_WSTR" length="10" precision="0" scale="0" codePage="0"/&gt;&lt;/referenceColumns&gt;&lt;/referenceMetadata&gt;</property>
+                <property
+                  containsID="true"
+                  dataType="System.String"
+                  description="Specifies the list of lineage identifiers that map to the parameters that the SQL statement in the SQLCommand property uses. Entries in the list are separated by semicolons."
+                  name="ParameterMap">#{Package\Data Flow Task\nfl schedule 2.Outputs[Flat File Source Output].Columns[Winner tie]};</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Determines whether duplicate keys in the reference data should be treated as errors when full cache mode is used."
+                  name="TreatDuplicateKeysAsError">false</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Data Flow Task\also Lookup home team id.Connections[OleDbConnection]"
+                  connectionManagerID="{184BFE5E-2A64-42CF-B95F-B3245CB3C998}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[localdb_destination]"
+                  description="Connection manager used to access lookup data."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Data Flow Task\also Lookup home team id.Inputs[Lookup Input]"
+                  name="Lookup Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Data Flow Task\also Lookup home team id.Inputs[Lookup Input].Columns[Winner tie]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="Winner tie"
+                      lineageId="Package\Data Flow Task\nfl schedule 2.Outputs[Flat File Source Output].Columns[Winner tie]">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Specifies the column in the reference table that a column joins."
+                          name="JoinToReferenceColumn">TeamName</property>
+                        <property
+                          dataType="System.Null"
+                          description="Specifies the column in the reference table from which a column is copied."
+                          name="CopyFromReferenceColumn" />
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Data Flow Task\also Lookup home team id.Outputs[Lookup Match Output]"
+                  errorOrTruncationOperation="Lookup"
+                  exclusionGroup="1"
+                  name="Lookup Match Output"
+                  synchronousInputId="Package\Data Flow Task\also Lookup home team id.Inputs[Lookup Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow Task\also Lookup home team id.Outputs[Lookup Match Output].Columns[HomeTeamID]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Copy Column"
+                      lineageId="Package\Data Flow Task\also Lookup home team id.Outputs[Lookup Match Output].Columns[HomeTeamID]"
+                      name="HomeTeamID"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Specifies the column in the reference table from which a column is copied."
+                          name="CopyFromReferenceColumn">TeamID</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Data Flow Task\also Lookup home team id.Outputs[Lookup No Match Output]"
+                  description="The Lookup output that handles rows with no matching entries in the reference dataset. Use this output when the NoMatchBehavior property is set to &quot;Send rows with no matching entries to the no match output.&quot;"
+                  exclusionGroup="1"
+                  name="Lookup No Match Output"
+                  synchronousInputId="Package\Data Flow Task\also Lookup home team id.Inputs[Lookup Input]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Data Flow Task\also Lookup home team id.Outputs[Lookup Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Lookup Error Output"
+                  synchronousInputId="Package\Data Flow Task\also Lookup home team id.Inputs[Lookup Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow Task\also Lookup home team id.Outputs[Lookup Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task\also Lookup home team id.Outputs[Lookup Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\also Lookup home team id.Outputs[Lookup Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task\also Lookup home team id.Outputs[Lookup Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Data Flow Task\Lookup away team id"
+              componentClassID="Microsoft.Lookup"
+              contactInfo="Lookup;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;6"
+              description="Joins additional columns to the data flow by looking up values in a table. For example, join to the 'employee id' column the employees table to get 'hire date' and 'employee name'. We recommend this transformation when the lookup table can fit into memory."
+              name="Lookup away team id"
+              usesDispositions="true"
+              version="6">
+              <properties>
+                <property
+                  dataType="System.String"
+                  description="Specifies the SQL statement that generates the lookup table."
+                  expressionType="Notify"
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from [dbo].[Teams]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies a SQL statement that uses parameters to generate the lookup table."
+                  expressionType="Notify"
+                  name="SqlCommandParam"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from (select * from [dbo].[Teams]) [refTable]
+where [refTable].[TeamName] = ?</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the type of connection used to access the reference dataset."
+                  name="ConnectionType"
+                  typeConverter="LookupConnectionType">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the cache type of the lookup table."
+                  name="CacheType"
+                  typeConverter="CacheType">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies how the Lookup transformation handles rows without matching entries in the reference data set."
+                  name="NoMatchBehavior"
+                  typeConverter="LookupNoMatchBehavior">1</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the percentage of the cache that is allocated for rows with no matching entries in the reference dataset."
+                  name="NoMatchCachePercentage">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Maximum Memory Usage for Reference Cache on a 32 bit platform."
+                  name="MaxMemoryUsage">25</property>
+                <property
+                  dataType="System.Int64"
+                  description="Maximum Memory Usage for Reference Cache on a 64 bit platform."
+                  name="MaxMemoryUsage64">25</property>
+                <property
+                  dataType="System.String"
+                  description="Indicates whether to reference metadata in an XML format."
+                  name="ReferenceMetadataXml">&lt;referenceMetadata&gt;&lt;referenceColumns&gt;&lt;referenceColumn name="TeamID" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="TeamAbbreviations" dataType="DT_WSTR" length="3" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="TeamName" dataType="DT_WSTR" length="50" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="Location" dataType="DT_WSTR" length="50" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="Conference" dataType="DT_WSTR" length="10" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="Division" dataType="DT_WSTR" length="10" precision="0" scale="0" codePage="0"/&gt;&lt;/referenceColumns&gt;&lt;/referenceMetadata&gt;</property>
+                <property
+                  containsID="true"
+                  dataType="System.String"
+                  description="Specifies the list of lineage identifiers that map to the parameters that the SQL statement in the SQLCommand property uses. Entries in the list are separated by semicolons."
+                  name="ParameterMap">#{Package\Data Flow Task\nfl schedule 1.Outputs[Flat File Source Output].Columns[AwayTeam]};</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Determines whether duplicate keys in the reference data should be treated as errors when full cache mode is used."
+                  name="TreatDuplicateKeysAsError">false</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Data Flow Task\Lookup away team id.Connections[OleDbConnection]"
+                  connectionManagerID="{184BFE5E-2A64-42CF-B95F-B3245CB3C998}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[localdb_destination]"
+                  description="Connection manager used to access lookup data."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Data Flow Task\Lookup away team id.Inputs[Lookup Input]"
+                  name="Lookup Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Data Flow Task\Lookup away team id.Inputs[Lookup Input].Columns[AwayTeam]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="AwayTeam"
+                      lineageId="Package\Data Flow Task\nfl schedule 1.Outputs[Flat File Source Output].Columns[AwayTeam]">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Specifies the column in the reference table that a column joins."
+                          name="JoinToReferenceColumn">TeamName</property>
+                        <property
+                          dataType="System.Null"
+                          description="Specifies the column in the reference table from which a column is copied."
+                          name="CopyFromReferenceColumn" />
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Data Flow Task\Lookup away team id.Outputs[Lookup Match Output]"
+                  errorOrTruncationOperation="Lookup"
+                  exclusionGroup="1"
+                  name="Lookup Match Output"
+                  synchronousInputId="Package\Data Flow Task\Lookup away team id.Inputs[Lookup Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow Task\Lookup away team id.Outputs[Lookup Match Output].Columns[AwayTeamID]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Copy Column"
+                      lineageId="Package\Data Flow Task\Lookup away team id.Outputs[Lookup Match Output].Columns[AwayTeamID]"
+                      name="AwayTeamID"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Specifies the column in the reference table from which a column is copied."
+                          name="CopyFromReferenceColumn">TeamID</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Data Flow Task\Lookup away team id.Outputs[Lookup No Match Output]"
+                  description="The Lookup output that handles rows with no matching entries in the reference dataset. Use this output when the NoMatchBehavior property is set to &quot;Send rows with no matching entries to the no match output.&quot;"
+                  exclusionGroup="1"
+                  name="Lookup No Match Output"
+                  synchronousInputId="Package\Data Flow Task\Lookup away team id.Inputs[Lookup Input]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Data Flow Task\Lookup away team id.Outputs[Lookup Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Lookup Error Output"
+                  synchronousInputId="Package\Data Flow Task\Lookup away team id.Inputs[Lookup Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow Task\Lookup away team id.Outputs[Lookup Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task\Lookup away team id.Outputs[Lookup Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\Lookup away team id.Outputs[Lookup Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task\Lookup away team id.Outputs[Lookup Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Data Flow Task\Lookup home team id"
+              componentClassID="Microsoft.Lookup"
+              contactInfo="Lookup;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;6"
+              description="Joins additional columns to the data flow by looking up values in a table. For example, join to the 'employee id' column the employees table to get 'hire date' and 'employee name'. We recommend this transformation when the lookup table can fit into memory."
+              name="Lookup home team id"
+              usesDispositions="true"
+              version="6">
+              <properties>
+                <property
+                  dataType="System.String"
+                  description="Specifies the SQL statement that generates the lookup table."
+                  expressionType="Notify"
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from [dbo].[Teams]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies a SQL statement that uses parameters to generate the lookup table."
+                  expressionType="Notify"
+                  name="SqlCommandParam"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from (select * from [dbo].[Teams]) [refTable]
+where [refTable].[TeamName] = ?</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the type of connection used to access the reference dataset."
+                  name="ConnectionType"
+                  typeConverter="LookupConnectionType">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the cache type of the lookup table."
+                  name="CacheType"
+                  typeConverter="CacheType">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies how the Lookup transformation handles rows without matching entries in the reference data set."
+                  name="NoMatchBehavior"
+                  typeConverter="LookupNoMatchBehavior">1</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the percentage of the cache that is allocated for rows with no matching entries in the reference dataset."
+                  name="NoMatchCachePercentage">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Maximum Memory Usage for Reference Cache on a 32 bit platform."
+                  name="MaxMemoryUsage">25</property>
+                <property
+                  dataType="System.Int64"
+                  description="Maximum Memory Usage for Reference Cache on a 64 bit platform."
+                  name="MaxMemoryUsage64">25</property>
+                <property
+                  dataType="System.String"
+                  description="Indicates whether to reference metadata in an XML format."
+                  name="ReferenceMetadataXml">&lt;referenceMetadata&gt;&lt;referenceColumns&gt;&lt;referenceColumn name="TeamID" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="TeamAbbreviations" dataType="DT_WSTR" length="3" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="TeamName" dataType="DT_WSTR" length="50" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="Location" dataType="DT_WSTR" length="50" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="Conference" dataType="DT_WSTR" length="10" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="Division" dataType="DT_WSTR" length="10" precision="0" scale="0" codePage="0"/&gt;&lt;/referenceColumns&gt;&lt;/referenceMetadata&gt;</property>
+                <property
+                  containsID="true"
+                  dataType="System.String"
+                  description="Specifies the list of lineage identifiers that map to the parameters that the SQL statement in the SQLCommand property uses. Entries in the list are separated by semicolons."
+                  name="ParameterMap">#{Package\Data Flow Task\nfl schedule 1.Outputs[Flat File Source Output].Columns[HomeTeam]};</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Determines whether duplicate keys in the reference data should be treated as errors when full cache mode is used."
+                  name="TreatDuplicateKeysAsError">false</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Data Flow Task\Lookup home team id.Connections[OleDbConnection]"
+                  connectionManagerID="{184BFE5E-2A64-42CF-B95F-B3245CB3C998}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[localdb_destination]"
+                  description="Connection manager used to access lookup data."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Data Flow Task\Lookup home team id.Inputs[Lookup Input]"
+                  name="Lookup Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Data Flow Task\Lookup home team id.Inputs[Lookup Input].Columns[HomeTeam]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="HomeTeam"
+                      lineageId="Package\Data Flow Task\nfl schedule 1.Outputs[Flat File Source Output].Columns[HomeTeam]">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Specifies the column in the reference table that a column joins."
+                          name="JoinToReferenceColumn">TeamName</property>
+                        <property
+                          dataType="System.Null"
+                          description="Specifies the column in the reference table from which a column is copied."
+                          name="CopyFromReferenceColumn" />
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Data Flow Task\Lookup home team id.Outputs[Lookup Match Output]"
+                  errorOrTruncationOperation="Lookup"
+                  exclusionGroup="1"
+                  name="Lookup Match Output"
+                  synchronousInputId="Package\Data Flow Task\Lookup home team id.Inputs[Lookup Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow Task\Lookup home team id.Outputs[Lookup Match Output].Columns[HomeTeamID]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Copy Column"
+                      lineageId="Package\Data Flow Task\Lookup home team id.Outputs[Lookup Match Output].Columns[HomeTeamID]"
+                      name="HomeTeamID"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Specifies the column in the reference table from which a column is copied."
+                          name="CopyFromReferenceColumn">TeamID</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Data Flow Task\Lookup home team id.Outputs[Lookup No Match Output]"
+                  description="The Lookup output that handles rows with no matching entries in the reference dataset. Use this output when the NoMatchBehavior property is set to &quot;Send rows with no matching entries to the no match output.&quot;"
+                  exclusionGroup="1"
+                  name="Lookup No Match Output"
+                  synchronousInputId="Package\Data Flow Task\Lookup home team id.Inputs[Lookup Input]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Data Flow Task\Lookup home team id.Outputs[Lookup Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Lookup Error Output"
+                  synchronousInputId="Package\Data Flow Task\Lookup home team id.Inputs[Lookup Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow Task\Lookup home team id.Outputs[Lookup Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task\Lookup home team id.Outputs[Lookup Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\Lookup home team id.Outputs[Lookup Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task\Lookup home team id.Outputs[Lookup Error Output].Columns[ErrorColumn]"
                       name="ErrorColumn"
                       specialFlags="2" />
                   </outputColumns>
@@ -866,8 +854,8 @@ where [refTable].[TeamName] = ?</property>
               <connections>
                 <connection
                   refId="Package\Data Flow Task\NFL DW.Connections[OleDbConnection]"
-                  connectionManagerID="Package.ConnectionManagers[(localdb)\ProjectModels.NFL-SQL-Project]"
-                  connectionManagerRefId="Package.ConnectionManagers[(localdb)\ProjectModels.NFL-SQL-Project]"
+                  connectionManagerID="{184BFE5E-2A64-42CF-B95F-B3245CB3C998}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[localdb_destination]"
                   description="The OLE DB runtime connection used to access the database."
                   name="OleDbConnection" />
               </connections>
@@ -1473,7 +1461,7 @@ where [refTable].[TeamName] = ?</property>
                       refId="Package\Data Flow Task\Union All.Inputs[Union All Input 1].Columns[HomeTeamID]"
                       cachedDataType="i4"
                       cachedName="HomeTeamID"
-                      lineageId="Package\Data Flow Task\Lookup.Outputs[Lookup Match Output].Columns[HomeTeamID]">
+                      lineageId="Package\Data Flow Task\Lookup home team id.Outputs[Lookup Match Output].Columns[HomeTeamID]">
                       <properties>
                         <property
                           containsID="true"
@@ -1486,7 +1474,7 @@ where [refTable].[TeamName] = ?</property>
                       refId="Package\Data Flow Task\Union All.Inputs[Union All Input 1].Columns[AwayTeamID]"
                       cachedDataType="i4"
                       cachedName="AwayTeamID"
-                      lineageId="Package\Data Flow Task\Lookup 1.Outputs[Lookup Match Output].Columns[AwayTeamID]">
+                      lineageId="Package\Data Flow Task\Lookup away team id.Outputs[Lookup Match Output].Columns[AwayTeamID]">
                       <properties>
                         <property
                           containsID="true"
@@ -1548,7 +1536,7 @@ where [refTable].[TeamName] = ?</property>
                       refId="Package\Data Flow Task\Union All.Inputs[Union All Input 2].Columns[HomeTeamID]"
                       cachedDataType="i4"
                       cachedName="HomeTeamID"
-                      lineageId="Package\Data Flow Task\Lookup 3.Outputs[Lookup Match Output].Columns[HomeTeamID]">
+                      lineageId="Package\Data Flow Task\also Lookup home team id.Outputs[Lookup Match Output].Columns[HomeTeamID]">
                       <properties>
                         <property
                           containsID="true"
@@ -1561,7 +1549,7 @@ where [refTable].[TeamName] = ?</property>
                       refId="Package\Data Flow Task\Union All.Inputs[Union All Input 2].Columns[AwayTeamID]"
                       cachedDataType="i4"
                       cachedName="AwayTeamID"
-                      lineageId="Package\Data Flow Task\Lookup 4.Outputs[Lookup Match Output].Columns[AwayTeamID]">
+                      lineageId="Package\Data Flow Task\also Lookup away team id.Outputs[Lookup Match Output].Columns[AwayTeamID]">
                       <properties>
                         <property
                           containsID="true"
@@ -1650,34 +1638,34 @@ where [refTable].[TeamName] = ?</property>
           <paths>
             <path
               refId="Package\Data Flow Task.Paths[Flat File Source Output]"
-              endId="Package\Data Flow Task\Lookup.Inputs[Lookup Input]"
+              endId="Package\Data Flow Task\Lookup home team id.Inputs[Lookup Input]"
               name="Flat File Source Output"
               startId="Package\Data Flow Task\nfl schedule 1.Outputs[Flat File Source Output]" />
             <path
               refId="Package\Data Flow Task.Paths[Flat File Source Output1]"
-              endId="Package\Data Flow Task\Lookup 3.Inputs[Lookup Input]"
+              endId="Package\Data Flow Task\also Lookup home team id.Inputs[Lookup Input]"
               name="Flat File Source Output"
               startId="Package\Data Flow Task\nfl schedule 2.Outputs[Flat File Source Output]" />
             <path
               refId="Package\Data Flow Task.Paths[Lookup Match Output]"
-              endId="Package\Data Flow Task\Lookup 1.Inputs[Lookup Input]"
+              endId="Package\Data Flow Task\Lookup away team id.Inputs[Lookup Input]"
               name="Lookup Match Output"
-              startId="Package\Data Flow Task\Lookup.Outputs[Lookup Match Output]" />
+              startId="Package\Data Flow Task\Lookup home team id.Outputs[Lookup Match Output]" />
             <path
               refId="Package\Data Flow Task.Paths[Lookup Match Output1]"
-              endId="Package\Data Flow Task\Lookup 4.Inputs[Lookup Input]"
+              endId="Package\Data Flow Task\also Lookup away team id.Inputs[Lookup Input]"
               name="Lookup Match Output"
-              startId="Package\Data Flow Task\Lookup 3.Outputs[Lookup Match Output]" />
+              startId="Package\Data Flow Task\also Lookup home team id.Outputs[Lookup Match Output]" />
             <path
               refId="Package\Data Flow Task.Paths[Lookup Match Output2]"
               endId="Package\Data Flow Task\Union All.Inputs[Union All Input 1]"
               name="Lookup Match Output"
-              startId="Package\Data Flow Task\Lookup 1.Outputs[Lookup Match Output]" />
+              startId="Package\Data Flow Task\Lookup away team id.Outputs[Lookup Match Output]" />
             <path
               refId="Package\Data Flow Task.Paths[Lookup Match Output3]"
               endId="Package\Data Flow Task\Union All.Inputs[Union All Input 2]"
               name="Lookup Match Output"
-              startId="Package\Data Flow Task\Lookup 4.Outputs[Lookup Match Output]" />
+              startId="Package\Data Flow Task\also Lookup away team id.Outputs[Lookup Match Output]" />
             <path
               refId="Package\Data Flow Task.Paths[Sort Output]"
               endId="Package\Data Flow Task\NFL DW.Inputs[OLE DB Destination Input]"
@@ -1726,78 +1714,78 @@ where [refTable].[TeamName] = ?</property>
           Id="Package\Data Flow Task\nfl schedule 2"
           TopLeft="621.666632700299,25.1333331585593" />
         <NodeLayout
-          Size="120.8,41.6"
-          Id="Package\Data Flow Task\Lookup 1"
-          TopLeft="277.499984838069,185.466665376955" />
-        <NodeLayout
-          Size="120.8,41.6"
-          Id="Package\Data Flow Task\Lookup 4"
+          Size="198.4,41.6"
+          Id="Package\Data Flow Task\also Lookup away team id"
           TopLeft="697.499961890282,195.199999349117" />
+        <NodeLayout
+          Size="178.4,41.6"
+          Id="Package\Data Flow Task\Lookup home team id"
+          TopLeft="265.833318808841,103.999999276797" />
         <NodeLayout
           Size="142.4,41.6"
           Id="Package\Data Flow Task\nfl schedule 1"
-          TopLeft="247.499986477197,19.0666665340795" />
+          TopLeft="248.333319764999,19.0666665340795" />
         <NodeLayout
           Size="97.6,41.6"
           Id="Package\Data Flow Task\Sort"
           TopLeft="614.166633110081,273.599998264313" />
         <NodeLayout
-          Size="112.8,41.6"
-          Id="Package\Data Flow Task\Lookup"
-          TopLeft="265.833318808841,103.999999276797" />
-        <NodeLayout
-          Size="120.8,41.6"
-          Id="Package\Data Flow Task\Lookup 3"
+          Size="200,41.6"
+          Id="Package\Data Flow Task\also Lookup home team id"
           TopLeft="708.333294631708,103.133332616157" />
+        <NodeLayout
+          Size="176,41.6"
+          Id="Package\Data Flow Task\Lookup away team id"
+          TopLeft="277.499984838069,185.466665376955" />
         <NodeLayout
           Size="118.4,41.6"
           Id="Package\Data Flow Task\NFL DW"
           TopLeft="464.999974593521,324.99999773999" />
         <EdgeLayout
           Id="Package\Data Flow Task.Paths[Lookup Match Output2]"
-          TopLeft="398.299984838069,206.266665376955">
+          TopLeft="453.499984838069,206.266665376955">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="88.3666552383045,8.40000010848036"
+              EndConnector="33.1666552383051,8.40000010847999"
               Start="0,0"
-              End="80.8666552383045,8.40000010848036">
+              End="25.6666552383051,8.40000010847999">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="40.1833276191522,0" />
+                    End="12.5833276191525,0" />
                   <mssgle:CubicBezierSegment
-                    Point1="40.1833276191522,0"
-                    Point2="44.1833276191522,0"
-                    Point3="44.1833276191522,4" />
+                    Point1="12.5833276191525,0"
+                    Point2="16.5833276191525,0"
+                    Point3="16.5833276191525,4" />
                   <mssgle:LineSegment
-                    End="44.1833276191522,4.40000010848036" />
+                    End="16.5833276191525,4.40000010847999" />
                   <mssgle:CubicBezierSegment
-                    Point1="44.1833276191522,4.40000010848036"
-                    Point2="44.1833276191522,8.40000010848036"
-                    Point3="48.1833276191522,8.40000010848036" />
+                    Point1="16.5833276191525,4.40000010847999"
+                    Point2="16.5833276191525,8.40000010847999"
+                    Point3="20.5833276191525,8.40000010847999" />
                   <mssgle:LineSegment
-                    End="80.8666552383045,8.40000010848036" />
+                    End="25.6666552383051,8.40000010847999" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-4.0080590995978,-17.609375,96.3827734375,11.609375"
+              BoundingBox="-31.6080590995975,-17.609375,96.3827734375,11.609375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\Data Flow Task.Paths[Lookup Match Output1]"
-          TopLeft="768.733294631708,144.733332616157">
+          TopLeft="808.333294631708,144.733332616157">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-10.833332741426,50.46666673296"
+              EndConnector="-11.633332741426,50.46666673296"
               Start="0,0"
-              End="-10.833332741426,42.96666673296">
+              End="-11.633332741426,42.96666673296">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
@@ -1808,56 +1796,56 @@ where [refTable].[TeamName] = ?</property>
                     Point2="0,25.23333336648"
                     Point3="-4,25.23333336648" />
                   <mssgle:LineSegment
-                    End="-6.83333274142603,25.23333336648" />
+                    End="-7.63333274142599,25.23333336648" />
                   <mssgle:CubicBezierSegment
-                    Point1="-6.83333274142603,25.23333336648"
-                    Point2="-10.833332741426,25.23333336648"
-                    Point3="-10.833332741426,29.23333336648" />
+                    Point1="-7.63333274142599,25.23333336648"
+                    Point2="-11.633332741426,25.23333336648"
+                    Point3="-11.633332741426,29.23333336648" />
                   <mssgle:LineSegment
-                    End="-10.833332741426,42.96666673296" />
+                    End="-11.633332741426,42.96666673296" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-53.608053089463,30.23333336648,96.3827734375,11.609375"
+              BoundingBox="-54.008053089463,30.23333336648,96.3827734375,11.609375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\Data Flow Task.Paths[Lookup Match Output]"
-          TopLeft="322.233318808841,145.599999276797">
+          TopLeft="355.033318808841,145.599999276797">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="15.6666660292283,39.8666661001581"
+              EndConnector="10.466666029228,39.866666100158"
               Start="0,0"
-              End="15.6666660292283,32.3666661001581">
+              End="10.466666029228,32.366666100158">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,15.9333330500791" />
+                    End="0,15.933333050079" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,15.9333330500791"
-                    Point2="0,19.9333330500791"
-                    Point3="4,19.9333330500791" />
+                    Point1="0,15.933333050079"
+                    Point2="0,19.933333050079"
+                    Point3="4,19.933333050079" />
                   <mssgle:LineSegment
-                    End="11.6666660292283,19.9333330500791" />
+                    End="6.46666602922801,19.933333050079" />
                   <mssgle:CubicBezierSegment
-                    Point1="11.6666660292283,19.9333330500791"
-                    Point2="15.6666660292283,19.9333330500791"
-                    Point3="15.6666660292283,23.9333330500791" />
+                    Point1="6.46666602922801,19.933333050079"
+                    Point2="10.466666029228,19.933333050079"
+                    Point3="10.466666029228,23.933333050079" />
                   <mssgle:LineSegment
-                    End="15.6666660292283,32.3666661001581" />
+                    End="10.466666029228,32.366666100158" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-40.3580537041359,24.9333330500791,96.3827734375,11.609375"
+              BoundingBox="-42.958053704136,24.933333050079,96.3827734375,11.609375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
@@ -1867,9 +1855,9 @@ where [refTable].[TeamName] = ?</property>
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="75.8666619314089,36.3999994575977"
+              EndConnector="115.466661931409,36.3999994575977"
               Start="0,0"
-              End="75.8666619314089,28.8999994575977">
+              End="115.466661931409,28.8999994575977">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
@@ -1880,13 +1868,13 @@ where [refTable].[TeamName] = ?</property>
                     Point2="0,18.1999997287989"
                     Point3="4,18.1999997287989" />
                   <mssgle:LineSegment
-                    End="71.8666619314089,18.1999997287989" />
+                    End="111.466661931409,18.1999997287989" />
                   <mssgle:CubicBezierSegment
-                    Point1="71.8666619314089,18.1999997287989"
-                    Point2="75.8666619314089,18.1999997287989"
-                    Point3="75.8666619314089,22.1999997287989" />
+                    Point1="111.466661931409,18.1999997287989"
+                    Point2="115.466661931409,18.1999997287989"
+                    Point3="115.466661931409,22.1999997287989" />
                   <mssgle:LineSegment
-                    End="75.8666619314089,28.8999994575977" />
+                    End="115.466661931409,28.8999994575977" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -1897,18 +1885,30 @@ where [refTable].[TeamName] = ?</property>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\Data Flow Task.Paths[Flat File Source Output]"
-          TopLeft="320.466652643019,60.6666665340795">
+          TopLeft="319.533319764999,60.6666665340795">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,43.3333327427171"
+              EndConnector="35.499999043842,43.3333327427175"
               Start="0,0"
-              End="0,35.8333327427171">
+              End="35.499999043842,35.8333327427175">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,35.8333327427171" />
+                    End="0,17.6666663713588" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,17.6666663713588"
+                    Point2="0,21.6666663713588"
+                    Point3="4,21.6666663713588" />
+                  <mssgle:LineSegment
+                    End="31.499999043842,21.6666663713588" />
+                  <mssgle:CubicBezierSegment
+                    Point1="31.499999043842,21.6666663713588"
+                    Point2="35.499999043842,21.6666663713588"
+                    Point3="35.499999043842,25.6666663713588" />
+                  <mssgle:LineSegment
+                    End="35.499999043842,35.8333327427175" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -1991,21 +1991,21 @@ where [refTable].[TeamName] = ?</property>
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-90.8333218139084,0"
+              EndConnector="-90.8333218139079,0"
               Start="0,0"
-              End="-83.3333218139084,0">
+              End="-83.3333218139079,0">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="-83.3333218139084,0" />
+                    End="-83.3333218139079,0" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-89.8580476257042,5,96.3827734375,11.609375"
+              BoundingBox="-89.858047625704,5,96.3827734375,11.609375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
@@ -2013,7 +2013,7 @@ where [refTable].[TeamName] = ?</property>
     </LayoutInfo>
   </TaskHost>
   <PipelineComponentMetadata
-    design-time-name="Package\Data Flow Task\Lookup 1">
+    design-time-name="Package\Data Flow Task\also Lookup away team id">
     <Properties>
       <Property>
         <Name>OverwriteParamsSQLProp</Name>
@@ -2036,7 +2036,7 @@ where [refTable].[TeamName] = ?</property>
     </Properties>
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
-    design-time-name="Package\Data Flow Task\Lookup 4">
+    design-time-name="Package\Data Flow Task\Lookup home team id">
     <Properties>
       <Property>
         <Name>OverwriteParamsSQLProp</Name>
@@ -2059,7 +2059,7 @@ where [refTable].[TeamName] = ?</property>
     </Properties>
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
-    design-time-name="Package\Data Flow Task\Lookup">
+    design-time-name="Package\Data Flow Task\also Lookup home team id">
     <Properties>
       <Property>
         <Name>OverwriteParamsSQLProp</Name>
@@ -2082,7 +2082,7 @@ where [refTable].[TeamName] = ?</property>
     </Properties>
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
-    design-time-name="Package\Data Flow Task\Lookup 3">
+    design-time-name="Package\Data Flow Task\Lookup away team id">
     <Properties>
       <Property>
         <Name>OverwriteParamsSQLProp</Name>

@@ -11,23 +11,11 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="AddQBPlayers"
   DTS:PackageType="5"
-  DTS:VersionBuild="17"
-  DTS:VersionGUID="{9F050426-9CF9-4763-BCDF-D2285386ED83}">
+  DTS:VersionBuild="20"
+  DTS:VersionGUID="{5F0EB814-8384-4524-A99E-9930EA155E59}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
-    <DTS:ConnectionManager
-      DTS:refId="Package.ConnectionManagers[(localdb)\ProjectModels.NFL-SQL-Project]"
-      DTS:CreationName="OLEDB"
-      DTS:DTSID="{584EB55C-C416-4B8A-9A30-C96078BAC35A}"
-      DTS:ObjectName="(localdb)\ProjectModels.NFL-SQL-Project">
-      <DTS:ObjectData>
-        <DTS:ConnectionManager
-          DTS:ConnectRetryCount="1"
-          DTS:ConnectRetryInterval="5"
-          DTS:ConnectionString="Data Source=(localdb)\ProjectModels;Initial Catalog=NFL-SQL-Project;Provider=MSOLEDBSQL.1;Integrated Security=SSPI;Auto Translate=False;" />
-      </DTS:ObjectData>
-    </DTS:ConnectionManager>
     <DTS:ConnectionManager
       DTS:refId="Package.ConnectionManagers[Flat File Connection Manager]"
       DTS:CreationName="FLATFILE"
@@ -423,8 +411,8 @@ where [refTable].[TeamAbbreviations] = ?</property>
               <connections>
                 <connection
                   refId="Package\Data Flow Task\Lookup TeamID.Connections[OleDbConnection]"
-                  connectionManagerID="Package.ConnectionManagers[(localdb)\ProjectModels.NFL-SQL-Project]"
-                  connectionManagerRefId="Package.ConnectionManagers[(localdb)\ProjectModels.NFL-SQL-Project]"
+                  connectionManagerID="{184BFE5E-2A64-42CF-B95F-B3245CB3C998}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[localdb_destination]"
                   description="Connection manager used to access lookup data."
                   name="OleDbConnection" />
               </connections>
@@ -570,8 +558,8 @@ where [refTable].[TeamAbbreviations] = ?</property>
               <connections>
                 <connection
                   refId="Package\Data Flow Task\NFL DW.Connections[OleDbConnection]"
-                  connectionManagerID="Package.ConnectionManagers[(localdb)\ProjectModels.NFL-SQL-Project]"
-                  connectionManagerRefId="Package.ConnectionManagers[(localdb)\ProjectModels.NFL-SQL-Project]"
+                  connectionManagerID="{184BFE5E-2A64-42CF-B95F-B3245CB3C998}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[localdb_destination]"
                   description="The OLE DB runtime connection used to access the database."
                   name="OleDbConnection" />
               </connections>
@@ -1202,7 +1190,7 @@ where [refTable].[TeamAbbreviations] = ?</property>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="27.1252754175501,-24.1803462821498,96.3827734375,11.609375"
+              BoundingBox="27.12527541755,-24.1803462821498,96.3827734375,11.609375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
@@ -1296,7 +1284,7 @@ where [refTable].[TeamAbbreviations] = ?</property>
       <Property>
         <Name>OverwriteParamsSQLProp</Name>
         <Value
-          type="q2:string">false</Value>
+          type="q2:boolean">false</Value>
       </Property>
       <Property>
         <Name>UsedTableName</Name>
@@ -1306,7 +1294,7 @@ where [refTable].[TeamAbbreviations] = ?</property>
       <Property>
         <Name>TableInfoObjectType</Name>
         <Value
-          type="q4:string">0</Value>
+          type="q4:int">0</Value>
       </Property>
       <Property>
         <Name>DataSourceViewID</Name>
