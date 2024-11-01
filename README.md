@@ -3,16 +3,22 @@
 ## Features
 - Views
 - Stored Procedures
+  - Query NFL games, teams, and players
+  - Add NFL players stats
+  - Auto update NFL players season stats 
 - Indexes
-- Create, Insert, Alter and Query
-- Backups and Data-Tier-App 
+- Data-Tier-App / Database schema management 
+- Version control 
+- ETL using SSIS
+- Backup using SSMS
 ## Technologies Used
 - SQL and T-SQL
 - SSMS
 - MS SQL Server
 - SSDT
+- SSIS
 ## TODOs
 - [] UI
-- [] SSIS, SSRS, SSAS
-- [] add birthday and stadium
-  
+- [] SSRS and SSAS
+- [] add birthday, stadium and more stats
+- [] sql server agent
