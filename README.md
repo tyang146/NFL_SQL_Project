@@ -7,7 +7,7 @@
   - Add NFL players stats
   - Auto update NFL players season stats 
 - Indexes
-- Data-Tier-App / Database schema management 
+- Data-Tier-App 
 - Version control 
 - ETL using SSIS
 - Backup using SSMS
