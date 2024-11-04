@@ -5,7 +5,8 @@
 - Stored Procedures
   - Query NFL games, teams, and players
   - Add NFL players stats
-  - Auto update NFL players season stats 
+  - Auto update NFL players season stats
+  - Create user who can access the sql server
 - Indexes
 - Data-Tier-App 
 - Version control 
