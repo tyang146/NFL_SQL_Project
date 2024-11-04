@@ -22,3 +22,4 @@
 - [] UI
 - [] SSRS and SSAS
 - [] add birthday, stadium and more stats
+- [] passer ratings
