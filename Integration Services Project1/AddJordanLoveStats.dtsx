@@ -11,8 +11,8 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="AddJordanLoveStats"
   DTS:PackageType="5"
-  DTS:VersionBuild="21"
-  DTS:VersionGUID="{C44AB49A-3D04-4927-B034-7F5EA0F1693A}">
+  DTS:VersionBuild="22"
+  DTS:VersionGUID="{F299DA77-0996-4513-927B-83B1F5F69A0F}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -31,7 +31,7 @@
           DTS:RowDelimiter=""
           DTS:TextQualifier="_x003C_none_x003E_"
           DTS:CodePage="1252"
-          DTS:ConnectionString="C:\Users\Kia\Desktop\NFL-SQL-Project\CSV\jordanlove(Worksheet).csv">
+          DTS:ConnectionString="C:\Users\Kia\Desktop\NFL_SQL_Project\CSV\jordanlove(Worksheet).csv">
           <DTS:FlatFileColumns>
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -39,7 +39,7 @@
               DTS:DataType="133"
               DTS:TextQualified="True"
               DTS:ObjectName="Date"
-              DTS:DTSID="{9C55E326-0F50-48DC-BAE7-AA5C98D1DF89}"
+              DTS:DTSID="{94F258F9-F548-49B8-9F31-A4280CF5ED88}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -48,7 +48,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="Cmp"
-              DTS:DTSID="{0B608B6B-BD14-43D4-B137-93C829765BD3}"
+              DTS:DTSID="{991984E0-DA5B-4963-ADB3-616A05156DFB}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -57,7 +57,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="Att"
-              DTS:DTSID="{CD942702-6EEB-4DCB-8103-9458A99149F0}"
+              DTS:DTSID="{AA4D803F-B4F5-44FE-B37E-E72337DC4E1F}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -66,7 +66,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="Cmp%"
-              DTS:DTSID="{0FD3E0F9-625F-43C7-9024-74C96403D2BF}"
+              DTS:DTSID="{360AA7A1-7F7C-4975-83AE-78EBD4C69490}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -75,7 +75,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="Yds"
-              DTS:DTSID="{A0FD8674-49A4-46E3-8AD6-A7685BA34B4A}"
+              DTS:DTSID="{3F9C95D3-2092-4241-B751-360076402110}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -84,7 +84,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="TD"
-              DTS:DTSID="{D3BD3B75-CEE5-4F7E-932C-8CEE226644C4}"
+              DTS:DTSID="{7CDB4A84-1DE1-402F-B6BF-DC02AA24F50A}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -93,7 +93,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="TD%"
-              DTS:DTSID="{B1C48A3C-DAFE-4649-9F4E-C0DE8BE82645}"
+              DTS:DTSID="{5EABFBC4-8353-4C08-AFF1-2139F0179BE7}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -102,7 +102,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="Int"
-              DTS:DTSID="{F198A8E3-AEA1-4CF5-99AB-603482E364BB}"
+              DTS:DTSID="{19338D18-2EC9-4FE3-B0BE-25A42A1773BB}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -111,7 +111,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="RAtt"
-              DTS:DTSID="{3C68CE99-ACD8-4275-AEAB-AD36D369863A}"
+              DTS:DTSID="{530AB9E3-D979-4510-9881-4A770660EDBC}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -120,7 +120,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="RYds"
-              DTS:DTSID="{3D8BFC2F-3AEA-412E-847C-6450149965BC}"
+              DTS:DTSID="{3DE4FF28-3A38-4050-B2F7-00C621D899D0}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -129,7 +129,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="RTD"
-              DTS:DTSID="{28E65516-1C07-45FF-BC23-4052EE85F429}"
+              DTS:DTSID="{CF0D850A-7FD2-45B8-922D-3E14D737DCC5}"
               DTS:CreationName="" />
           </DTS:FlatFileColumns>
         </DTS:ConnectionManager>
@@ -1673,7 +1673,7 @@ where [refTable].[FirstName] = ? and [refTable].[LastName] = ?</property>
       <Property>
         <Name>OverwriteParamsSQLProp</Name>
         <Value
-          type="q2:boolean">false</Value>
+          type="q2:string">false</Value>
       </Property>
       <Property>
         <Name>UsedTableName</Name>
@@ -1683,7 +1683,7 @@ where [refTable].[FirstName] = ? and [refTable].[LastName] = ?</property>
       <Property>
         <Name>TableInfoObjectType</Name>
         <Value
-          type="q4:int">0</Value>
+          type="q4:string">0</Value>
       </Property>
       <Property>
         <Name>DataSourceViewID</Name>
@@ -1696,7 +1696,7 @@ where [refTable].[FirstName] = ? and [refTable].[LastName] = ?</property>
       <Property>
         <Name>OverwriteParamsSQLProp</Name>
         <Value
-          type="q2:boolean">false</Value>
+          type="q2:string">false</Value>
       </Property>
       <Property>
         <Name>UsedTableName</Name>
@@ -1706,7 +1706,7 @@ where [refTable].[FirstName] = ? and [refTable].[LastName] = ?</property>
       <Property>
         <Name>TableInfoObjectType</Name>
         <Value
-          type="q4:int">0</Value>
+          type="q4:string">0</Value>
       </Property>
       <Property>
         <Name>DataSourceViewID</Name>
