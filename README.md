@@ -20,6 +20,6 @@
 - SSIS
 ## TODOs
 - [] UI
-- [] SSRS and SSAS
+- [] SSRS, SSAS, and ML
 - [] add birthday, stadium and more stats
 - [] passer ratings
