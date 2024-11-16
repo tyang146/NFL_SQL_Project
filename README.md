@@ -19,7 +19,6 @@
 - SSDT
 - SSIS
 ## TODOs
-- [] UI
-- [] SSRS, SSAS, and ML
-- [] add birthday, stadium and more stats
-- [] passer ratings
+- [ ] UI
+- [ ] add birthday, stadium and more stats
+- [ ] passer ratings
