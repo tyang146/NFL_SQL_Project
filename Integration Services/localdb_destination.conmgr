@@ -7,6 +7,6 @@
     <DTS:ConnectionManager
       DTS:ConnectRetryCount="1"
       DTS:ConnectRetryInterval="5"
-      DTS:ConnectionString="Data Source=(localdb)\ProjectModels;Initial Catalog=NFL-SQL-Project;Provider=MSOLEDBSQL.1;Integrated Security=SSPI;Auto Translate=False;Application Name=SSIS-Integration Services Project1-{184BFE5E-2A64-42CF-B95F-B3245CB3C998}(localdb)\ProjectModels.NFL-SQL-Project;" />
+      DTS:ConnectionString="Data Source=(localdb)\ProjectModels;Initial Catalog=NFL-SQL-Schema;Provider=MSOLEDBSQL.1;Integrated Security=SSPI;Auto Translate=False;Application Name=SSIS-Integration Services Project1-{184BFE5E-2A64-42CF-B95F-B3245CB3C998}(localdb)\ProjectModels.NFL-SQL-Project;" />
   </DTS:ObjectData>
 </DTS:ConnectionManager>

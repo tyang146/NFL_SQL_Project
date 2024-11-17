@@ -15,7 +15,7 @@
       <SSIS:Project SSIS:ProtectionLevel="EncryptSensitiveWithUserKey" xmlns:SSIS="www.microsoft.com/SqlServer/SSIS">
         <SSIS:Properties>
           <SSIS:Property SSIS:Name="ID">{b0b15839-7b63-4c68-a42c-9bb22a8396b9}</SSIS:Property>
-          <SSIS:Property SSIS:Name="Name">Integration Services Project1</SSIS:Property>
+          <SSIS:Property SSIS:Name="Name">Integration Services</SSIS:Property>
           <SSIS:Property SSIS:Name="VersionMajor">1</SSIS:Property>
           <SSIS:Property SSIS:Name="VersionMinor">0</SSIS:Property>
           <SSIS:Property SSIS:Name="VersionBuild">0</SSIS:Property>
@@ -26,13 +26,13 @@
           <SSIS:Property SSIS:Name="CreatorComputerName">LAPTOP-7195F50U</SSIS:Property>
           <SSIS:Property SSIS:Name="Description">
           </SSIS:Property>
-          <SSIS:Property SSIS:Name="PasswordVerifier" SSIS:Sensitive="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAnObRMrrkk0GeeLztGhTjxAAAAAACAAAAAAAQZgAAAAEAACAAAAAUDHvFRn4r4XaC4yA9cSx84rjMJw9T1WLIftSAu15nRgAAAAAOgAAAAAIAACAAAAC2boWlPfJaznLFUFq474V/Rj3rDu6K2wT1WrZXy7TsfJAAAABsF6NyuHgrTB/tsdAUIQXSf4xhbdbLFqgvUiVqna0tKsqzlrsWeaEy3tAQrPLfVI/IK9rZ/xe8slUM6qP6xAzx3XzSGwsBrvo4jjAO6hPGi+JlLuXNHwbJr4xQHZvmYTDb6ArOzb8P+bCbtbqE3061G7AIcCKPrUf/E5rUvPn/dOFehNFQigLeV34Av4xPV+tAAAAAgBdWgeSwb73iJ/d6t0cUO4m/+e/5Uw7lORHcxP3eNVDnnF0/0ylvC5vCtJ8Ixtf+sfDWUu9CKZLuFRtpRRXLTA==</SSIS:Property>
+          <SSIS:Property SSIS:Name="PasswordVerifier" SSIS:Sensitive="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAnObRMrrkk0GeeLztGhTjxAAAAAACAAAAAAAQZgAAAAEAACAAAADeE8Av+GEW83cLfBMjVkXj6SPlzR0Wq3VLmzaJzVH0CAAAAAAOgAAAAAIAACAAAABGBFFp9fZraZo4eUOIFk//H1AmEJeSu0jLbQKMFFLx+ZAAAADX7o8gaMKbJbNPo0dOvWZiT7njcQCzmoU1Z5PYNgxXaYWl5o7wsASJyFmHAzsczkO5J6t2ae+msvulM/Ln07vxcqyo584FtO7Y26nvpC2gMNXdZVDkSlAxipkKycy3B7qnwN1uZpdkJWhrmxQcCh8cs7gvye9RVDJLdKfPqhpgSjx90R8xdTKIo1C46a9yEq5AAAAA1bW1YF7fCGL0ja80gj2kCiWJFibkgoiOgfIOT9fW9yfaRW8jSNBUfQ8FJ0u8hGzGOAMriQtf/8tQRO3McPGfTA==</SSIS:Property>
           <SSIS:Property SSIS:Name="FormatVersion">1</SSIS:Property>
         </SSIS:Properties>
         <SSIS:Packages>
           <SSIS:Package SSIS:Name="Add2024NFLSchedule.dtsx" SSIS:EntryPoint="1" />
-          <SSIS:Package SSIS:Name="AddQBPlayers.dtsx" SSIS:EntryPoint="1" />
           <SSIS:Package SSIS:Name="AddJordanLoveStats.dtsx" SSIS:EntryPoint="0" />
+          <SSIS:Package SSIS:Name="AddPassingPlayers.dtsx" SSIS:EntryPoint="1" />
         </SSIS:Packages>
         <SSIS:ConnectionManagers>
           <SSIS:ConnectionManager SSIS:Name="localdb_destination.conmgr" />
@@ -65,7 +65,7 @@
                 <SSIS:Property SSIS:Name="IncludeInDebugDump">0</SSIS:Property>
                 <SSIS:Property SSIS:Name="Required">0</SSIS:Property>
                 <SSIS:Property SSIS:Name="Sensitive">0</SSIS:Property>
-                <SSIS:Property SSIS:Name="Value">Data Source=(localdb)\ProjectModels;Initial Catalog=NFL-SQL-Project;Provider=MSOLEDBSQL.1;Integrated Security=SSPI;Auto Translate=False;Application Name=SSIS-Integration Services Project1-{184BFE5E-2A64-42CF-B95F-B3245CB3C998}(localdb)\ProjectModels.NFL-SQL-Project;</SSIS:Property>
+                <SSIS:Property SSIS:Name="Value">Data Source=(localdb)\ProjectModels;Initial Catalog=NFL-SQL-Schema;Provider=MSOLEDBSQL.1;Integrated Security=SSPI;Auto Translate=False;Application Name=SSIS-Integration Services Project1-{184BFE5E-2A64-42CF-B95F-B3245CB3C998}(localdb)\ProjectModels.NFL-SQL-Project;</SSIS:Property>
                 <SSIS:Property SSIS:Name="DataType">18</SSIS:Property>
               </SSIS:Properties>
             </SSIS:Parameter>
@@ -125,7 +125,7 @@
                 <SSIS:Property SSIS:Name="IncludeInDebugDump">0</SSIS:Property>
                 <SSIS:Property SSIS:Name="Required">0</SSIS:Property>
                 <SSIS:Property SSIS:Name="Sensitive">0</SSIS:Property>
-                <SSIS:Property SSIS:Name="Value">NFL-SQL-Project</SSIS:Property>
+                <SSIS:Property SSIS:Name="Value">NFL-SQL-Schema</SSIS:Property>
                 <SSIS:Property SSIS:Name="DataType">18</SSIS:Property>
               </SSIS:Properties>
             </SSIS:Parameter>
@@ -367,8 +367,6 @@
                     <SSIS:Property SSIS:Name="IncludeInDebugDump">0</SSIS:Property>
                     <SSIS:Property SSIS:Name="Required">0</SSIS:Property>
                     <SSIS:Property SSIS:Name="Sensitive">0</SSIS:Property>
-                    <SSIS:Property SSIS:Name="Value">
-                    </SSIS:Property>
                     <SSIS:Property SSIS:Name="DataType">18</SSIS:Property>
                   </SSIS:Properties>
                 </SSIS:Parameter>
@@ -564,8 +562,6 @@
                     <SSIS:Property SSIS:Name="IncludeInDebugDump">0</SSIS:Property>
                     <SSIS:Property SSIS:Name="Required">0</SSIS:Property>
                     <SSIS:Property SSIS:Name="Sensitive">0</SSIS:Property>
-                    <SSIS:Property SSIS:Name="Value">
-                    </SSIS:Property>
                     <SSIS:Property SSIS:Name="DataType">18</SSIS:Property>
                   </SSIS:Properties>
                 </SSIS:Parameter>
@@ -601,16 +597,16 @@
                 </SSIS:Parameter>
               </SSIS:Parameters>
             </SSIS:PackageMetaData>
-            <SSIS:PackageMetaData SSIS:Name="AddQBPlayers.dtsx">
+            <SSIS:PackageMetaData SSIS:Name="AddJordanLoveStats.dtsx">
               <SSIS:Properties>
-                <SSIS:Property SSIS:Name="ID">{36402985-B22A-4A27-ACDA-6309145923F1}</SSIS:Property>
-                <SSIS:Property SSIS:Name="Name">AddQBPlayers</SSIS:Property>
+                <SSIS:Property SSIS:Name="ID">{FEE9E748-45F3-4E9B-9CD1-BBB626E302F5}</SSIS:Property>
+                <SSIS:Property SSIS:Name="Name">AddJordanLoveStats</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionMajor">1</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionMinor">0</SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionBuild">21</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionBuild">23</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionComments">
                 </SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionGUID">{7D4D6142-D4FB-4B7E-BD94-68E515AE2A5D}</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionGUID">{E80A1FAC-55D5-4954-92F2-902A6158D1CC}</SSIS:Property>
                 <SSIS:Property SSIS:Name="PackageFormatVersion">8</SSIS:Property>
                 <SSIS:Property SSIS:Name="Description">
                 </SSIS:Property>
@@ -688,7 +684,7 @@
                     <SSIS:Property SSIS:Name="IncludeInDebugDump">0</SSIS:Property>
                     <SSIS:Property SSIS:Name="Required">0</SSIS:Property>
                     <SSIS:Property SSIS:Name="Sensitive">0</SSIS:Property>
-                    <SSIS:Property SSIS:Name="Value">C:\Users\Kia\Desktop\NFL_SQL_Project\CSV\qb_players.csv</SSIS:Property>
+                    <SSIS:Property SSIS:Name="Value">C:\Users\Kia\Desktop\NFL_SQL_Project\CSV\jordan_love.csv</SSIS:Property>
                     <SSIS:Property SSIS:Name="DataType">18</SSIS:Property>
                   </SSIS:Properties>
                 </SSIS:Parameter>
@@ -816,16 +812,16 @@
                 </SSIS:Parameter>
               </SSIS:Parameters>
             </SSIS:PackageMetaData>
-            <SSIS:PackageMetaData SSIS:Name="AddJordanLoveStats.dtsx">
+            <SSIS:PackageMetaData SSIS:Name="AddPassingPlayers.dtsx">
               <SSIS:Properties>
-                <SSIS:Property SSIS:Name="ID">{FEE9E748-45F3-4E9B-9CD1-BBB626E302F5}</SSIS:Property>
-                <SSIS:Property SSIS:Name="Name">AddJordanLoveStats</SSIS:Property>
+                <SSIS:Property SSIS:Name="ID">{96655EED-D4C1-412F-9A5B-2BB07AE4542F}</SSIS:Property>
+                <SSIS:Property SSIS:Name="Name">AddPassingPlayers</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionMajor">1</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionMinor">0</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionBuild">22</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionComments">
                 </SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionGUID">{F299DA77-0996-4513-927B-83B1F5F69A0F}</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionGUID">{1E01B6DD-A345-4297-A63D-4B6F123C26EF}</SSIS:Property>
                 <SSIS:Property SSIS:Name="PackageFormatVersion">8</SSIS:Property>
                 <SSIS:Property SSIS:Name="Description">
                 </SSIS:Property>
@@ -903,7 +899,7 @@
                     <SSIS:Property SSIS:Name="IncludeInDebugDump">0</SSIS:Property>
                     <SSIS:Property SSIS:Name="Required">0</SSIS:Property>
                     <SSIS:Property SSIS:Name="Sensitive">0</SSIS:Property>
-                    <SSIS:Property SSIS:Name="Value">C:\Users\Kia\Desktop\NFL_SQL_Project\CSV\jordanlove(Worksheet).csv</SSIS:Property>
+                    <SSIS:Property SSIS:Name="Value">C:\Users\Kia\Desktop\NFL_SQL_Project\CSV\passing_players.csv</SSIS:Property>
                     <SSIS:Property SSIS:Name="DataType">18</SSIS:Property>
                   </SSIS:Properties>
                 </SSIS:Parameter>

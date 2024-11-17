@@ -3,9 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.11.35327.3
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "NFL-SQL-Project", "NFL-SQL-Project\NFL-SQL-Project.sqlproj", "{BE8FC329-ADC3-4ECB-9CA8-F76C06D80F87}"
+Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "NFL-SQL-Schema", "NFL-SQL-Schema\NFL-SQL-Schema.sqlproj", "{BE8FC329-ADC3-4ECB-9CA8-F76C06D80F87}"
 EndProject
-Project("{C9674DCB-5085-4A16-B785-4C70DD1589BD}") = "Integration Services Project1", "Integration Services Project1\Integration Services Project1.dtproj", "{BA640B01-2EE7-42CF-B699-D4CFEE2822B0}"
+Project("{C9674DCB-5085-4A16-B785-4C70DD1589BD}") = "Integration Services", "Integration Services\Integration Services.dtproj", "{AFED3862-DE4C-4855-A90B-F3015F2F59D9}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -23,12 +23,12 @@ Global
 		{BE8FC329-ADC3-4ECB-9CA8-F76C06D80F87}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{BE8FC329-ADC3-4ECB-9CA8-F76C06D80F87}.Release|Any CPU.Build.0 = Release|Any CPU
 		{BE8FC329-ADC3-4ECB-9CA8-F76C06D80F87}.Release|Any CPU.Deploy.0 = Release|Any CPU
-		{BA640B01-2EE7-42CF-B699-D4CFEE2822B0}.Debug|Any CPU.ActiveCfg = Development
-		{BA640B01-2EE7-42CF-B699-D4CFEE2822B0}.Debug|Any CPU.Build.0 = Development
-		{BA640B01-2EE7-42CF-B699-D4CFEE2822B0}.Development|Any CPU.ActiveCfg = Development
-		{BA640B01-2EE7-42CF-B699-D4CFEE2822B0}.Development|Any CPU.Build.0 = Development
-		{BA640B01-2EE7-42CF-B699-D4CFEE2822B0}.Release|Any CPU.ActiveCfg = Development
-		{BA640B01-2EE7-42CF-B699-D4CFEE2822B0}.Release|Any CPU.Build.0 = Development
+		{AFED3862-DE4C-4855-A90B-F3015F2F59D9}.Debug|Any CPU.ActiveCfg = Development
+		{AFED3862-DE4C-4855-A90B-F3015F2F59D9}.Debug|Any CPU.Build.0 = Development
+		{AFED3862-DE4C-4855-A90B-F3015F2F59D9}.Development|Any CPU.ActiveCfg = Development
+		{AFED3862-DE4C-4855-A90B-F3015F2F59D9}.Development|Any CPU.Build.0 = Development
+		{AFED3862-DE4C-4855-A90B-F3015F2F59D9}.Release|Any CPU.ActiveCfg = Development
+		{AFED3862-DE4C-4855-A90B-F3015F2F59D9}.Release|Any CPU.Build.0 = Development
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
