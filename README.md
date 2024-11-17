@@ -1,5 +1,6 @@
 ## NFL SQL Project
 ![diagram](https://github.com/tyang146/NFL_SQL_Project/blob/master/DiagramPhoto/1.PNG)
+![diagram2](https://github.com/tyang146/NFL_SQL_Project/blob/master/DiagramPhoto/Capture.PNG)
 ## Features
 - Views
 - Stored Procedures
@@ -19,9 +20,9 @@
 - SSDT
 - SSIS
 - Python
+- Power BI
 ## Reference
 https://www.pro-football-reference.com/
 ## TODOs
-- [ ] UI
 - [ ] add birthday, stadium and more stats
-- [ ] passer ratings
+- [ ] compare players
