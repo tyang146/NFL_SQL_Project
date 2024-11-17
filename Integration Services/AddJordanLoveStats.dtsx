@@ -11,8 +11,8 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="AddJordanLoveStats"
   DTS:PackageType="5"
-  DTS:VersionBuild="23"
-  DTS:VersionGUID="{E80A1FAC-55D5-4954-92F2-902A6158D1CC}">
+  DTS:VersionBuild="24"
+  DTS:VersionGUID="{694409C1-036C-4654-AC6B-96FF06B998F6}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -1293,17 +1293,19 @@ where [refTable].[FirstName] = ? and [refTable].[LastName] = ?</property>
                       externalMetadataColumnId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[RushingAttempts]"
                       lineageId="Package\Data Flow Task\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of RAtt]" />
                     <inputColumn
-                      refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Copy of RTD]"
-                      cachedDataType="i4"
-                      cachedName="Copy of RTD"
-                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[RushingYards]"
-                      lineageId="Package\Data Flow Task\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of RTD]" />
-                    <inputColumn
                       refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Copy of RYds]"
                       cachedDataType="i4"
                       cachedName="Copy of RYds"
-                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[RushingTouchdowns]"
+                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[RushingYards]"
                       lineageId="Package\Data Flow Task\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of RYds]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[RTD]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="RTD"
+                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[RushingTouchdowns]"
+                      lineageId="Package\Data Flow Task\jordan love stats.Outputs[Flat File Source Output].Columns[RTD]" />
                   </inputColumns>
                   <externalMetadataColumns
                     isUsed="True">
