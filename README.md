@@ -18,6 +18,7 @@
 - MS SQL Server
 - SSDT
 - SSIS
+- Python
 ## Reference
 https://www.pro-football-reference.com/
 ## TODOs
