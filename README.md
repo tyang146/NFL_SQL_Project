@@ -18,6 +18,8 @@
 - MS SQL Server
 - SSDT
 - SSIS
+## Reference
+https://www.pro-football-reference.com/
 ## TODOs
 - [ ] UI
 - [ ] add birthday, stadium and more stats
