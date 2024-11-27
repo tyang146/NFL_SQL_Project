@@ -23,6 +23,3 @@
 - Power BI
 ## Reference
 https://www.pro-football-reference.com/
-## TODOs
-- [ ] add birthday, stadium and more stats
-- [ ] compare players
