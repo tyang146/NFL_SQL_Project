@@ -11,8 +11,8 @@
 - Indexes
 - Data-Tier-App 
 - Version control 
-- ETL using SSIS
-- Backup using SSMS
+- ETL using SSIS and Python
+- Backups using SSMS
 ## Technologies Used
 - SQL and T-SQL
 - SSMS
