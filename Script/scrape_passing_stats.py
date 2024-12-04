@@ -5,8 +5,8 @@ import requests
 # URL for the passing stats table
 url = "https://www.pro-football-reference.com/years/2024/passing.htm"
 
+# method to fetch data
 def fetch_passing_data(url: str) -> pd.DataFrame:
-    # Print the URL for debugging
     print(f"Fetching data from: {url}")
     
     # Request the page
@@ -47,7 +47,11 @@ def fetch_passing_data(url: str) -> pd.DataFrame:
     # Convert to DataFrame
     return pd.DataFrame(data)
 
-# Example usage
+# main 
 if __name__ == '__main__':
+    # Fetch data
     passing_df = fetch_passing_data(url)
+    # Print result
     print(passing_df)
+    ## Optionally, save to CSV
+    #passing_df.to_csv('passing_stats.csv', index=False)
