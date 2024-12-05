@@ -1,6 +1,6 @@
 ## NFL SQL Project
-![diagram](https://github.com/tyang146/NFL_SQL_Project/blob/master/DiagramPhoto/1.PNG)
-![diagram2](https://github.com/tyang146/NFL_SQL_Project/blob/master/DiagramPhoto/Capture.PNG)
+![diagram](https://github.com/tyang146/NFL_SQL_Project/blob/master/Photos/1.PNG)
+![diagram2](https://github.com/tyang146/NFL_SQL_Project/blob/master/Photos/Capture.PNG)
 ## Features
 - Views
 - Stored Procedures
