@@ -1,3 +1,4 @@
 - [ ] add birthday, stadium and more stats
 - [ ] compare players
 - [ ] make it into an api
+- [ ] fix pbix add team name and color
